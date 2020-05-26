@@ -1,2 +1,2 @@
-# govuk-frontend-jinja
+# GOV.UK Frontend Jinja
 GOV.UK Frontend port using Jinja templates
