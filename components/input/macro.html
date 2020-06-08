@@ -1,0 +1,50 @@
+{% macro govukInput(params) %}
+  {% from "app/vendor/govuk-frontend/components/error-message/macro.html" import govukErrorMessage -%}
+{% from "app/vendor/govuk-frontend/components/hint/macro.html" import govukHint %}
+{% from "app/vendor/govuk-frontend/components/label/macro.html" import govukLabel %}
+
+{#- a record of other elements that we need to associate with the input using
+   aria-describedby – for example hints or error messages -#}
+{% set describedBy = params.describedBy if params.describedBy else "" %}
+<div class="govuk-form-group {%- if params.errorMessage %} govuk-form-group--error{% endif %} {%- if params.formGroup and params.formGroup.classes %} {{ params.formGroup.classes }}{% endif %}">
+  {{ govukLabel({
+    'html': params.label.html,
+    'text': params.label.text,
+    'classes': params.label.classes,
+    'isPageHeading': params.label.isPageHeading,
+    'attributes': params.label.attributes,
+    'for': params.id
+  }) | trim }}
+{% if params.hint %}
+  {% set hintId = params.id + '-hint' %}
+  {% set describedBy = describedBy + ' ' + hintId if describedBy else hintId %}
+  {{ govukHint({
+    'id': hintId,
+    'classes': (params.hint.classes if params.hint and params.hint.classes),
+    'attributes': params.hint.attributes,
+    'html': params.hint.html,
+    'text': params.hint.text
+  }) | trim }}
+{% endif %}
+{% if params.errorMessage %}
+  {% set errorId = params.id + '-error' %}
+  {% set describedBy = describedBy + ' ' + errorId if describedBy else errorId %}
+  {{ govukErrorMessage({
+    'id': errorId,
+    'classes': params.errorMessage.classes,
+    'attributes': params.errorMessage.attributes,
+    'html': params.errorMessage.html,
+    'text': params.errorMessage.text,
+    'visuallyHiddenText': params.errorMessage.visuallyHiddenText
+  }) | trim }}
+{% endif %}
+  <input class="govuk-input {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.errorMessage %} govuk-input--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}" type="{{ params.type | default('text') }}"
+  {%- if params.value %} value="{{ params.value}}"{% endif %}
+  {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %}
+  {%- if params.autocomplete %} autocomplete="{{ params.autocomplete}}"{% endif %}
+  {%- if params.pattern %} pattern="{{ params.pattern }}"{% endif %}
+  {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
+  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor -%}>
+</div>
+
+{% endmacro %}

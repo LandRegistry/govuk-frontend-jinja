@@ -1,0 +1,12 @@
+{% macro govukWarningText(params) %}
+  <div class="govuk-warning-text {{- ' ' + params.classes if params.classes else ''}}"
+  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor -%}
+  >
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">{{ params.iconFallbackText }}</span>
+    {{ params.html | safe if params.html else params.text }}
+  </strong>
+</div>
+
+{% endmacro %}
