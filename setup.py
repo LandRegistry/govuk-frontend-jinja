@@ -14,9 +14,15 @@ setuptools.setup(
     url="https://github.com/LandRegistry/govuk-frontend-jinja",
     packages=setuptools.find_packages(),
     classifiers=[
+        "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
+        "Environment :: Web Environment",
         "Operating System :: OS Independent",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Code Generators",
+        "Topic :: Software Development :: User Interfaces",
+        "Topic :: Text Processing :: Markup :: HTML"
     ],
     python_requires='>=3.6',
 )
