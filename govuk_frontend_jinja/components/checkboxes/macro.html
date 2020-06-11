@@ -1,8 +1,8 @@
 {% macro govukCheckboxes(params) %}
-{% from "app/vendor/govuk-frontend/components/error-message/macro.html" import govukErrorMessage -%}
-{% from "app/vendor/govuk-frontend/components/fieldset/macro.html" import govukFieldset %}
-{% from "app/vendor/govuk-frontend/components/hint/macro.html" import govukHint %}
-{% from "app/vendor/govuk-frontend/components/label/macro.html" import govukLabel %}
+{% from "govuk_frontend_jinja/components/error-message/macro.html" import govukErrorMessage -%}
+{% from "govuk_frontend_jinja/components/fieldset/macro.html" import govukFieldset %}
+{% from "govuk_frontend_jinja/components/hint/macro.html" import govukHint %}
+{% from "govuk_frontend_jinja/components/label/macro.html" import govukLabel %}
 
 {#- If an id 'prefix' is not passed, fall back to using the name attribute
    instead. We need this for error messages and hints as well -#}

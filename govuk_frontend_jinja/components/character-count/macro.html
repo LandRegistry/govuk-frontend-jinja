@@ -1,6 +1,6 @@
 {% macro govukCharacterCount(params) %}
-{% from "app/vendor/govuk-frontend/components/textarea/macro.html" import govukTextarea %}
-{% from "app/vendor/govuk-frontend/components/hint/macro.html" import govukHint %}
+{% from "govuk_frontend_jinja/components/textarea/macro.html" import govukTextarea %}
+{% from "govuk_frontend_jinja/components/hint/macro.html" import govukHint %}
 
 <div class="govuk-character-count" data-module="govuk-character-count"
 {%- if params.maxlength %} data-maxlength="{{ params.maxlength }}"{% endif %}

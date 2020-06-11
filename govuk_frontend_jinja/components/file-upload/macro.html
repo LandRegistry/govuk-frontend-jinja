@@ -1,7 +1,7 @@
 {% macro govukFileUpload(params) %}
-{% from "app/vendor/govuk-frontend/components/error-message/macro.html" import govukErrorMessage -%}
-{% from "app/vendor/govuk-frontend/components/hint/macro.html" import govukHint %}
-{% from "app/vendor/govuk-frontend/components/label/macro.html" import govukLabel %}
+{% from "govuk_frontend_jinja/components/error-message/macro.html" import govukErrorMessage -%}
+{% from "govuk_frontend_jinja/components/hint/macro.html" import govukHint %}
+{% from "govuk_frontend_jinja/components/label/macro.html" import govukLabel %}
 
 {#- a record of other elements that we need to associate with the input using
    aria-describedby – for example hints or error messages -#}
