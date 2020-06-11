@@ -7,7 +7,7 @@
   "scripts": {
     "fetch-examples": "node scripts/fetch-govuk-frontend-examples.js",
     "pretest": "npm run fetch-examples",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --notify --verbose"
   },
   "repository": {
     "type": "git",
@@ -19,11 +19,16 @@
   },
   "homepage": "https://github.com/LandRegistry/govuk-frontend-jinja#readme",
   "dependencies": {
+    "@markedjs/html-differ": "^3.0.2",
+    "@starptech/prettyhtml": "^0.10.0",
     "cli-progress": "^3.8.2",
+    "ent": "^2.2.0",
     "glob": "^7.1.6",
     "got": "^11.3.0",
     "govuk-frontend": "^3.7.0",
+    "jest": "^26.0.1",
     "js-yaml": "^3.14.0",
-    "mkdirp": "^1.0.4"
+    "mkdirp": "^1.0.4",
+    "nunjucks": "^3.2.1"
   }
 }
