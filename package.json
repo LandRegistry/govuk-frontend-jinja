@@ -1,11 +1,12 @@
 {
   "private": true,
   "name": "govuk-frontend-jinja",
-  "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "fetch-examples": "node scripts/fetch-govuk-frontend-examples.js",
+    "pretest": "npm run fetch-examples",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/LandRegistry/govuk-frontend-jinja/issues"
   },
-  "homepage": "https://github.com/LandRegistry/govuk-frontend-jinja#readme"
+  "homepage": "https://github.com/LandRegistry/govuk-frontend-jinja#readme",
+  "dependencies": {
+    "cli-progress": "^3.8.2",
+    "glob": "^7.1.6",
+    "got": "^11.3.0",
+    "govuk-frontend": "^3.7.0",
+    "js-yaml": "^3.14.0",
+    "mkdirp": "^1.0.4"
+  }
 }
