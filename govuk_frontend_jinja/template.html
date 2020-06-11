@@ -1,6 +1,6 @@
-{% from "app/vendor/govuk-frontend//components/skip-link/macro.html" import govukSkipLink -%}
-{% from "app/vendor/govuk-frontend//components/header/macro.html" import govukHeader -%}
-{% from "app/vendor/govuk-frontend//components/footer/macro.html" import govukFooter -%}
+{% from "govuk_frontend_jinja/components/skip-link/macro.html" import govukSkipLink -%}
+{% from "govuk_frontend_jinja/components/header/macro.html" import govukHeader -%}
+{% from "govuk_frontend_jinja/components/footer/macro.html" import govukFooter -%}
 {# specify absolute url for the static assets folder e.g. http://wwww.domain.com/assets #}
 {%- set assetUrl = assetUrl | default(assetPath) -%}
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
 
     {% block head %}{% endblock %}
     {# The default og:image is added below head so that scrapers see any custom metatags first, and this is just a fallback #}
-    {# image url needs to be absolute e.g. http://wwww.domain.com/.app/vendor/govuk-frontend/.app/vendor/govuk-frontend//govuk-opengraph-image.png #}
+    {# image url needs to be absolute e.g. http://wwww.domain.com/.govuk_frontend_jinja/.govuk_frontend_jinja/govuk-opengraph-image.png #}
     <meta property="og:image" content="{{ assetUrl | default('/assets') }}/images/govuk-opengraph-image.png">
   </head>
   <body class="govuk-template__body {{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{attribute}}="{{value}}"{% endfor %}>
