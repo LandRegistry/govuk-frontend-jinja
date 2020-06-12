@@ -1,4 +1,7 @@
 const diffComponentAgainstReferenceNunjucks = require('./utils/govuk-frontend-diff');
-const examples = require('../.cache/govuk-frontend-examples/header.json');
+const exec = require('child_process').execFileSync;
 
-diffComponentAgainstReferenceNunjucks('header', examples);
+diffComponentAgainstReferenceNunjucks(function(component, params) {
+    const output = exec('./tests/utils/render.py', ['--component', component, '--params', JSON.stringify(params)]);
+    return output.toString('utf8');
+});
