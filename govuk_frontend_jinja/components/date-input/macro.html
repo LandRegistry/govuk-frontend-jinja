@@ -6,7 +6,8 @@
 
 {#- a record of other elements that we need to associate with the input using
    aria-describedby – for example hints or error messages -#}
-{% set describedBy = params.fieldset.describedBy if params.fieldset and params.fieldset.describedBy else "" %}
+{% set ns = namespace() %}
+{% set ns.describedBy = params.fieldset.describedBy if params.fieldset and params.fieldset.describedBy else "" %}
 
 {% if 'items' in params and params['items'] | length %}
   {% set dateInputItems = params['items'] %}
@@ -31,7 +32,7 @@
 {% set innerHtml %}
 {% if params.hint %}
   {% set hintId = params.id + "-hint" %}
-  {% set describedBy = describedBy + " " + hintId if describedBy else hintId %}
+  {% set ns.describedBy = ns.describedBy + " " + hintId if ns.describedBy else hintId %}
   {{ govukHint({
     'id': hintId,
     'classes': (params.hint.classes if params.hint and params.hint.classes),
@@ -42,7 +43,7 @@
 {% endif %}
 {% if params.errorMessage %}
   {% set errorId = params.id + "-error" %}
-  {% set describedBy = describedBy + " " + errorId if describedBy else errorId %}
+  {% set ns.describedBy = ns.describedBy + " " + errorId if ns.describedBy else errorId %}
   {{ govukErrorMessage({
     'id': errorId,
     'classes': params.errorMessage.classes,
@@ -84,7 +85,7 @@
     adding the role to the fieldset always makes the output overly verbose for
     radio buttons or checkboxes. -#}
   {% call govukFieldset({
-    'describedBy': describedBy,
+    'describedBy': ns.describedBy,
     'classes': params.fieldset.classes,
     'role': 'group',
     'attributes': params.fieldset.attributes,

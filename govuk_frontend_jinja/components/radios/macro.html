@@ -8,11 +8,13 @@
    instead. We need this for error messages and hints as well -#}
 {% set idPrefix = params.idPrefix if params.idPrefix else params.name %}
 
+{% set ns = namespace() %}
+
 {#- a record of other elements that we need to associate with the input using
    aria-describedby – for example hints or error messages -#}
-{% set describedBy = params.fieldset.describedBy if params.fieldset and params.fieldset.describedBy else "" %}
+{% set ns.describedBy = params.fieldset.describedBy if params.fieldset and params.fieldset.describedBy else "" %}
 
-{% set ns = namespace(isConditional=False) %}
+{% set ns.isConditional = False %}
 {% for item in params['items'] %}
   {% if item.conditional and item.conditional.html %}
     {% set ns.isConditional = True %}
@@ -23,7 +25,7 @@
 {% set innerHtml %}
 {% if params.hint %}
   {% set hintId = idPrefix + '-hint' %}
-  {% set describedBy = describedBy + ' ' + hintId if describedBy else hintId %}
+  {% set ns.describedBy = ns.describedBy + ' ' + hintId if ns.describedBy else hintId %}
   {{ govukHint({
     'id': hintId,
     'classes': (params.hint.classes if params.hint and params.hint.classes),
@@ -34,7 +36,7 @@
 {% endif %}
 {% if params.errorMessage %}
   {% set errorId = idPrefix + '-error' %}
-  {% set describedBy = describedBy + ' ' + errorId if describedBy else errorId %}
+  {% set ns.describedBy = ns.describedBy + ' ' + errorId if ns.describedBy else errorId %}
   {{ govukErrorMessage({
     'id': errorId,
     'classes': params.errorMessage.classes,
@@ -104,7 +106,7 @@
 <div class="govuk-form-group {%- if params.errorMessage %} govuk-form-group--error{% endif %} {%- if params.formGroup and params.formGroup.classes %} {{ params.formGroup.classes }}{% endif %}">
 {% if params.fieldset %}
   {% call govukFieldset({
-    'describedBy': describedBy,
+    'describedBy': ns.describedBy,
     'classes': params.fieldset.classes,
     'attributes': params.fieldset.attributes,
     'legend': params.fieldset.legend
