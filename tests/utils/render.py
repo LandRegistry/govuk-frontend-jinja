@@ -5,7 +5,7 @@ import json
 from jinja2 import Environment, FileSystemLoader, PrefixLoader
 
 loader = PrefixLoader({
-    'govuk_frontend_jinja': FileSystemLoader(searchpath='govuk_frontend_jinja')
+    'govuk_frontend_jinja': FileSystemLoader(searchpath='govuk_frontend_jinja/templates')
 })
 env = Environment(loader=loader, autoescape=True)
 

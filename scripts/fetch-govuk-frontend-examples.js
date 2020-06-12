@@ -2,10 +2,10 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const path = require('path');
-const glob = require('glob');
 const got = require('got');
 const cliProgress = require('cli-progress');
 const govukPackage = require('govuk-frontend/package.json');
+const getGovukComponentList = require('./get-govuk-component-list');
 
 const fetchExamplesProgress = new cliProgress.SingleBar(
   {
@@ -43,15 +43,11 @@ function fetchExample(name) {
 }
 
 function fetchExamples() {
-  const components = glob.sync('govuk_frontend_jinja/components/*/macro.html');
+  const components = getGovukComponentList();
 
   fetchExamplesProgress.start(components.length, 0);
 
-  const promises = components
-    .map((value) =>
-      path.dirname(path.relative('govuk_frontend_jinja/components', value))
-    )
-    .map(fetchExample);
+  const promises = components.map(fetchExample);
 
   return Promise.all(promises)
     .then(function (examples) {
