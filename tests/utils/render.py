@@ -2,9 +2,12 @@
 
 import argparse
 import json
-from jinja2 import Environment, FileSystemLoader
-env = Environment(loader=FileSystemLoader(searchpath='govuk_frontend_jinja'), autoescape=True)
+from jinja2 import Environment, FileSystemLoader, PrefixLoader
 
+loader = PrefixLoader({
+    'govuk_frontend_jinja': FileSystemLoader(searchpath='govuk_frontend_jinja')
+})
+env = Environment(loader=loader, autoescape=True)
 
 parser = argparse.ArgumentParser(description='Render a govuk_frontend_jinja template.')
 parser.add_argument('--component', metavar='Component name', nargs=1, help='The name of the component')
@@ -16,7 +19,7 @@ def hyphenated_to_camel(string):
     return ''.join(x.capitalize() for x in string.split('-'))
 
 template = env.from_string('''
-    {{% from "components/" + component + "/macro.html" import govuk{macro_name} %}}
+    {{% from "govuk_frontend_jinja/components/" + component + "/macro.html" import govuk{macro_name} %}}
     {{{{ govuk{macro_name}(params) }}}}
 '''.format(macro_name=hyphenated_to_camel(args.component[0])))
 
