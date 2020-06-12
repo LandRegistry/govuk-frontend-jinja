@@ -14,6 +14,7 @@ jobs:
         with:
           python-version: "3.x"
       - run: npm ci
+      - run: pip3 install -r requirements-test.txt
       - run: npm run lint
       - run: flake8 .
 
