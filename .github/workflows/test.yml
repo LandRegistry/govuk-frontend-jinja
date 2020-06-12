@@ -10,5 +10,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
       - run: npm ci
+      - run: pip3 install -r requirements-test.txt
       - run: npm test
