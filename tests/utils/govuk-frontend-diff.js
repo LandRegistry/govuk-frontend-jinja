@@ -1,14 +1,13 @@
 const nunjucks = require('nunjucks');
 const ent = require('ent');
 const prettyhtml = require('@starptech/prettyhtml');
-const HtmlDiffer = require('@markedjs/html-differ').HtmlDiffer;
-const examples = require('../../.cache/govuk-frontend-examples/all.json');
+const { HtmlDiffer } = require('@markedjs/html-differ');
 const glob = require('glob');
 const path = require('path');
+const examples = require('../../.cache/govuk-frontend-examples/all.json');
 
 const htmlDiffer = new HtmlDiffer({
-  ignoreAttributes: [
-  ],
+  ignoreAttributes: [],
   ignoreSelfClosingSlash: true,
 });
 
@@ -19,13 +18,18 @@ function cleanHtml(dirtyHtml) {
 }
 
 // Grab list of components from govuk-frontend
-const govukComponentPath = path.join(path.dirname(require.resolve('govuk-frontend/package.json')), 'govuk/components')
-const components = glob.sync(path.join(govukComponentPath, '**/macro.njk')).map(componentPath => path.relative(govukComponentPath, path.dirname(componentPath)));
+const govukComponentPath = path.join(
+  path.dirname(require.resolve('govuk-frontend/package.json')),
+  'govuk/components'
+);
+const components = glob
+  .sync(path.join(govukComponentPath, '**/macro.njk'))
+  .map((componentPath) =>
+    path.relative(govukComponentPath, path.dirname(componentPath))
+  );
 
-function diffComponentAgainstReferenceNunjucks(
-  renderCallback
-) {
-  components.forEach(component => {
+function diffComponentAgainstReferenceNunjucks(renderCallback) {
+  components.forEach((component) => {
     describe(component, () => {
       examples[component].examples.forEach((example) => {
         describe(`${example.name}`, () => {

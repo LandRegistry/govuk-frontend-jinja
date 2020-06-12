@@ -1,0 +1,12 @@
+{
+  "extends": ["wesbos"],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/no-cycle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "no-nested-ternary": "off",
+    "no-shadow": "off",
+    "no-unused-vars": ["error"]
+  }
+}
