@@ -10,8 +10,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
       - run: npm ci
       - run: npm run lint
+      - run: flake8 .
 
   test:
     runs-on: ubuntu-latest
