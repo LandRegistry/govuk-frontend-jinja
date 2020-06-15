@@ -6,7 +6,8 @@ import os
 from jinja2 import Environment, FileSystemLoader, PrefixLoader
 
 loader = PrefixLoader({
-    'govuk_frontend_jinja': FileSystemLoader(searchpath=os.path.join(os.path.dirname(__file__), '../../govuk_frontend_jinja/templates'))
+    'govuk_frontend_jinja': FileSystemLoader(searchpath=os.path.join(os.path.dirname(__file__),
+                                             '../../govuk_frontend_jinja/templates'))
 })
 env = Environment(loader=loader, autoescape=True)
 
