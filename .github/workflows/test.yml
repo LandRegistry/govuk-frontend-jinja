@@ -7,27 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
       - uses: actions/setup-python@v2
         with:
           python-version: "3.x"
-      - run: npm ci
       - run: pip3 install -r requirements-test.txt
-      - run: npm run lint
       - run: flake8 .
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
       - uses: actions/setup-python@v2
         with:
           python-version: "3.x"
-      - run: npm ci
       - run: pip3 install -r requirements-test.txt
-      - run: npm test
+      - run: curl -L https://github.com/andymantell/govuk-frontend-diff/releases/download/v0.1-alpha-5/govuk-frontend-diff-linux --output govuk-frontend-diff
+      - run: chmod +x govuk-frontend-diff
+      - run: govuk-frontend-diff tests/utils/render.py --govuk-frontend-version=v3.7.0
