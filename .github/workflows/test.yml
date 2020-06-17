@@ -21,6 +21,6 @@ jobs:
         with:
           python-version: "3.x"
       - run: pip3 install -r requirements-test.txt
-      - run: curl -L https://github.com/andymantell/govuk-frontend-diff/releases/download/v0.5-alpha/govuk-frontend-diff-linux --output govuk-frontend-diff --ci
+      - run: curl -L https://github.com/andymantell/govuk-frontend-diff/releases/download/v0.5-alpha/govuk-frontend-diff-linux --output govuk-frontend-diff
       - run: chmod +x govuk-frontend-diff
-      - run: ./govuk-frontend-diff tests/utils/render.py --govuk-frontend-version=v3.7.0
+      - run: ./govuk-frontend-diff tests/utils/render.py --govuk-frontend-version=v3.7.0 --ci
