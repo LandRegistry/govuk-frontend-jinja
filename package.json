@@ -7,7 +7,7 @@
   "scripts": {
     "fetch-examples": "node scripts/fetch-govuk-frontend-examples.js",
     "pretest": "npm run fetch-examples",
-    "test": "jest --notify --verbose",
+    "test": "jest --verbose --detectOpenHandles --forceExit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
