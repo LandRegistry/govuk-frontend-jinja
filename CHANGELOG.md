@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 
 - Move templates to a subfolder to simplify `PackageLoader` setup in consuming apps
+- Recommend consuming apps use `ChoiceLoader` to access templates without a namespace prefix
 
 ### Fixed
 
