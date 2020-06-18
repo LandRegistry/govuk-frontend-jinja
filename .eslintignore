@@ -1,2 +1,7 @@
-node_modules
+.cache
+build
+dist
 govuk_frontend_jinja
+govuk_frontend_jinja.egg-info
+node_modules
+venv
