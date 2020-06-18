@@ -10,12 +10,16 @@ After running `pip install govuk-frontend-jinja`, ensure that you tell Jinja whe
 
 ```python
 from flask import Flask
-from jinja2 import PackageLoader, PrefixLoader
+from jinja2 import ChoiceLoader, PackageLoader, PrefixLoader
 
 app = Flask(__name__)
 
-app.jinja_loader = PrefixLoader({
-    'govuk_frontend_jinja': PackageLoader('govuk_frontend_jinja'),
-    'app': PackageLoader('app'),
-})
+loader = ChoiceLoader([
+    PackageLoader('app'),
+    PrefixLoader({
+        'govuk_frontend_jinja': PackageLoader('govuk_frontend_jinja')
+    })
+])
+app.jinja_loader = loader
+
 ```
