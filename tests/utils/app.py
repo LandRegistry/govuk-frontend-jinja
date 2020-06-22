@@ -10,6 +10,7 @@ loader = PrefixLoader({
 })
 app.jinja_loader = loader
 
+
 @app.route('/template', methods=['POST'])
 def template():
     data = request.json
@@ -30,6 +31,7 @@ def template():
 
     return render_template_string(template, **data)
 
+
 @app.route('/component/<component>', methods=['POST'])
 def component(component):
     data = request.json
@@ -41,7 +43,3 @@ def component(component):
         component=component,
         params=data['params']
     )
-
-
-
-
