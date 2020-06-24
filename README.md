@@ -23,3 +23,12 @@ loader = ChoiceLoader([
 app.jinja_loader = loader
 
 ```
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/LandRegistry/govuk-frontend-jinja/tags).
+
+## Contributors
+
+- [Matt Shaw](https://github.com/matthew-shaw) (Primary maintainer)
+- [Andy Mantell](https://github.com/andymantell) (Original author)
