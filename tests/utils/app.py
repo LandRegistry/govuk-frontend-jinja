@@ -4,16 +4,19 @@ from flask import Flask, render_template_string, request
 
 app = Flask(__name__)
 
-loader = PrefixLoader({
+app.jinja_loader = PrefixLoader({
     'govuk_frontend_jinja': FileSystemLoader(searchpath=os.path.join(os.path.dirname(__file__),
                                              '../../govuk_frontend_jinja/templates'))
 })
-app.jinja_loader = loader
 
 
+# Template route
 @app.route('/template', methods=['POST'])
 def template():
     data = request.json
+
+    # Construct a page template which can override any of the blocks if they are specified
+    # This doesn't need to be inline - it could be it's own file
     template = '''
         {% extends "govuk_frontend_jinja/template.html" %}
         {% block pageTitle %}{% if pageTitle %}{{ pageTitle }}{% else %}{{ super() }}{% endif %}{% endblock %}
@@ -29,13 +32,20 @@ def template():
         {% block bodyEnd %}{% if bodyEnd %}{{ bodyEnd }}{% else %}{{ super() }}{% endif %}{% endblock %}
     '''
 
+    # Render the full html template
     return render_template_string(template, **data)
 
 
+# Component route
 @app.route('/component/<component>', methods=['POST'])
 def component(component):
     data = request.json
 
+    # Render the component using the data provided
+    # component is the hyphenated component name e.g. character-count
+    # data['macro_name'] is the camelcased name e.g. CharacterCount
+    # data['params] are the params that will be passed to the macro
+    # Returns an html response that is just the template in question - no wrapping <html>, <body> elements etc
     return render_template_string('''
         {{% from "govuk_frontend_jinja/components/" + component + "/macro.html" import govuk{macro_name} %}}
         {{{{ govuk{macro_name}(params) }}}}
