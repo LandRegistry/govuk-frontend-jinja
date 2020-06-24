@@ -41,3 +41,12 @@ You can then run the tests using `govuk-frontend-diff` as follows:
 ```
 
 This is all wrapped up in `./test.sh` for simplified running.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/LandRegistry/govuk-frontend-jinja/tags).
+
+## Contributors
+
+- [Matt Shaw](https://github.com/matthew-shaw) (Primary maintainer)
+- [Andy Mantell](https://github.com/andymantell) (Original author)
