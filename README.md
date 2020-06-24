@@ -23,3 +23,21 @@ loader = ChoiceLoader([
 app.jinja_loader = loader
 
 ```
+
+## Running the tests
+
+The tests are run in a GitHub actions pipeline but if you want to run them locally you will need to install [govuk-frontend-diff](https://github.com/surevine/govuk-frontend-diff).
+
+There is a test server at `tests/utils/app.py` which you will need to run using the following command:
+
+```bash
+(cd tests/utils && python -m flask run --port 3000)
+```
+
+You can then run the tests using `govuk-frontend-diff` as follows:
+
+```bash
+./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.7.0
+```
+
+This is all wrapped up in `./test.sh` for simplified running.
