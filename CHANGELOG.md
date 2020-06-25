@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/0.2.0...master)
 
+### Changed
+
+- Test suite now abstracted out and using [govuk-frontend-diff](https://github.com/surevine/govuk-frontend-diff/). Allows nodejs to be wholly removed from this repository and benefit from shared improvements to the govuk-frontend-diff test suite.
+
 ## [0.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.0)
 
 ### Added
