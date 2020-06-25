@@ -1,5 +1,9 @@
 # GOV.UK Frontend Jinja Macros
 
+[![PyPI version](https://badge.fury.io/py/govuk-frontend-jinja.svg)](https://pypi.org/project/govuk-frontend-jinja/)
+![govuk-frontend 3.7.0](https://img.shields.io/badge/govuk--frontend%20version-3.7.0-005EA5?logo=gov.uk&style=flat)
+[![Test](https://github.com/LandRegistry/govuk-frontend-jinja/workflows/Test/badge.svg)](https://github.com/LandRegistry/govuk-frontend-jinja/actions)
+
 This repository contains [Jinja](https://jinja.palletsprojects.com/) macro ports of the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend). This is currently up to date with [release v3.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.7.0).
 
 ## How to use
