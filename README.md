@@ -4,11 +4,13 @@
 ![govuk-frontend 3.7.0](https://img.shields.io/badge/govuk--frontend%20version-3.7.0-005EA5?logo=gov.uk&style=flat)
 [![Test](https://github.com/LandRegistry/govuk-frontend-jinja/workflows/Test/badge.svg)](https://github.com/LandRegistry/govuk-frontend-jinja/actions)
 
-This repository contains [Jinja](https://jinja.palletsprojects.com/) macro ports of the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend). This is currently up to date with [release v3.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.7.0).
+This repository provides a complete set of [Jinja](https://jinja.palletsprojects.com/) macro ports that are kept up-to-date and 100% compliant with the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend) Nunjucks macros. Porting is intentionally manual rather than automated to make updates simpler than maintaining an automated conversion routine. A [comprehensive test suite](https://github.com/surevine/govuk-frontend-diff) ensures compliance against the latest, and every subsequent, GOV.UK Frontend release.
+
+- Package: [https://pypi.org/project/govuk-frontend-jinja/](https://pypi.org/project/govuk-frontend-jinja/)
+- Example: [https://github.com/matthew-shaw/govuk-frontend-jinja-example](https://github.com/matthew-shaw/govuk-frontend-jinja-example)
+- Demo: [https://govuk-frontend-jinja.herokuapp.com/](https://govuk-frontend-jinja.herokuapp.com/)
 
 ## How to use
-
-[Here](https://github.com/matthew-shaw/govuk-frontend-jinja-example) is a simple example Flask app that demonstrates how to import and use the GOV.UK Jinja macros.
 
 After running `pip install govuk-frontend-jinja`, ensure that you tell Jinja where to load the templates from using the `PackageLoader` as follows:
 
