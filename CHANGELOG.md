@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
+- Correctly camel case SVG attributes in the header and footer
 - Optional parameter added to the input, textarea and character-count components to enable or disable the spellcheck attribute
 - Dockerised test suite for easier local running
 
