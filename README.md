@@ -44,7 +44,7 @@ You can then run the tests using `govuk-frontend-diff` as follows:
 ./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.7.0
 ```
 
-This is all wrapped up in `./test.sh` for simplified running.
+This is all wrapped up in `./test.sh` for simplified running (Requires Docker).
 
 ## Versioning
 

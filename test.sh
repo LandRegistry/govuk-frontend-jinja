@@ -1,3 +1,6 @@
-flake8 .
-(cd tests/utils && nohup python -m flask run --port 3000 &)
-./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.7.0
+#!/usr/bin/env bash
+
+set -e
+
+docker build -f ./tests/utils/Dockerfile -t govuk-frontend-jinja-test .
+docker run -t govuk-frontend-jinja-test
