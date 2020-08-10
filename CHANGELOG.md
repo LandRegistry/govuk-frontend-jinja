@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
+- Optional parameter added to the input, textarea and character-count components to enable or disable the spellcheck attribute
 - Dockerised test suite for easier local running
 
 ## [0.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.1)
