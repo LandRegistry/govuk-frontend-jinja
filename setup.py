@@ -7,9 +7,9 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 components = []
-directories = glob.glob('govuk_frontend_jinja/**/**/*.html', recursive=True)
+directories = glob.glob("govuk_frontend_jinja/**/**/*.html", recursive=True)
 for directory in directories:
-    components.append(os.path.relpath(os.path.dirname(directory), 'govuk_frontend_jinja') + '/*.html')
+    components.append(os.path.relpath(os.path.dirname(directory), "govuk_frontend_jinja") + "/*.html")
 
 setuptools.setup(
     name="govuk-frontend-jinja",
@@ -21,7 +21,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/LandRegistry/govuk-frontend-jinja",
     packages=setuptools.find_packages(),
-    package_data={'govuk_frontend_jinja': components},
+    package_data={"govuk_frontend_jinja": components},
     classifiers=[
         "Development Status :: 4 - Beta",
         "Programming Language :: Python :: 3",
@@ -31,7 +31,7 @@ setuptools.setup(
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Code Generators",
         "Topic :: Software Development :: User Interfaces",
-        "Topic :: Text Processing :: Markup :: HTML"
+        "Topic :: Text Processing :: Markup :: HTML",
     ],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )
