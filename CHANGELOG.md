@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.0.0...master)
 
-## [1.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.0.0)
+## [1.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.0.0) - 20/08/2020
 
 ### Changed
 
@@ -16,13 +16,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Optional parameter added to the input, textarea and character-count components to enable or disable the spellcheck attribute
 - Dockerised test suite for easier local running
 
-## [0.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.1)
+## [0.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.1) - 25/06/2020
 
 ### Changed
 
 - Test suite now abstracted out and using [govuk-frontend-diff](https://github.com/surevine/govuk-frontend-diff/). Allows nodejs to be wholly removed from this repository and benefit from shared improvements to the govuk-frontend-diff test suite.
 
-## [0.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.0)
+## [0.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.0) - 18/06/2020
 
 ### Added
 
@@ -43,7 +43,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Jinja variable scoping issues using namespaces
 - Length of navigation items in footer component that might not exist
 
-## [0.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.1.0)
+## [0.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.1.0) - 12/06/2020
 
 ### Added
 
