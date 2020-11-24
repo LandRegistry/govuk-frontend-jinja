@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.0.0...master)
 
+## [1.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.1.0) - xx/11/2020
+
+### Added
+
+- [Notification banner](https://design-system.service.gov.uk/components/notification-banner/) component support
+- Text input [prefix and suffix](https://design-system.service.gov.uk/components/text-input/#prefixes-and-suffixes) support
+
+### Changed
+
+- Update to [GOV.UK Frontend v3.10.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.10.0)
+
 ## [1.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.0.0) - 20/08/2020
 
 ### Changed
