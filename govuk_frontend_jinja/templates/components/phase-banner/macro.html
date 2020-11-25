@@ -4,11 +4,13 @@
 <div class="govuk-phase-banner
   {%- if params.classes %} {{ params.classes }}{% endif %}"{% for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
   <p class="govuk-phase-banner__content">
-    {{ govukTag({
-      'text': params.tag.text,
-      'html': params.tag.html,
-      'classes': "govuk-phase-banner__content__tag" + (" " + params.tag.classes if params.tag.classes else '')
-    }) | trim }}
+    {% if params.tag %}
+      {{ govukTag({
+        'text': params.tag.text,
+        'html': params.tag.html,
+        'classes': "govuk-phase-banner__content__tag" + (" " + params.tag.classes if params.tag.classes else '')
+      }) | indent(4) | trim }}
+    {% endif %}
     <span class="govuk-phase-banner__text">
       {{ params.html | safe if params.html else params.text }}
     </span>
