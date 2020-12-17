@@ -1,7 +1,7 @@
 # GOV.UK Frontend Jinja Macros
 
 [![PyPI version](https://badge.fury.io/py/govuk-frontend-jinja.svg)](https://pypi.org/project/govuk-frontend-jinja/)
-![govuk-frontend 3.10.1](https://img.shields.io/badge/govuk--frontend%20version-3.10.1-005EA5?logo=gov.uk&style=flat)
+![govuk-frontend 3.10.2](https://img.shields.io/badge/govuk--frontend%20version-3.10.2-005EA5?logo=gov.uk&style=flat)
 [![Test](https://github.com/LandRegistry/govuk-frontend-jinja/workflows/Test/badge.svg)](https://github.com/LandRegistry/govuk-frontend-jinja/actions)
 
 This repository provides a complete set of [Jinja](https://jinja.palletsprojects.com/) macro ports that are kept up-to-date and 100% compliant with the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend) Nunjucks macros. Porting is intentionally manual rather than automated to make updates simpler than maintaining an automated conversion routine. A [comprehensive test suite](https://github.com/surevine/govuk-frontend-diff) ensures compliance against the latest, and every subsequent, GOV.UK Frontend release.
@@ -41,7 +41,7 @@ There is a test server at `tests/utils/app.py` which you will need to run using 
 You can then run the tests using `govuk-frontend-diff` as follows:
 
 ```bash
-./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.10.1
+./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.10.2
 ```
 
 This is all wrapped up in `./test.sh` for simplified running (Requires Docker).
