@@ -7,7 +7,7 @@
   <h2 class="govuk-tabs__title">
     {{ params.title | default ("Contents") }}
   </h2>
-  {% if(params['items'] | length) %}
+  {% if 'items' in params and params['items'] | length %}
   <ul class="govuk-tabs__list">
     {% for item in params['items'] %}
       {% if item %}
@@ -22,14 +22,16 @@
     {% endfor %}
   </ul>
   {% endif %}
-  {% for item in params['items'] %}
-    {% if item %}
-      {% set id = item.id if item.id else idPrefix + "-" ~ loop.index %}
-      <div class="govuk-tabs__panel{% if loop.index > 1 %} govuk-tabs__panel--hidden{% endif %}" id="{{ id }}"{% for attribute, value in (item.panel.attributes.items() if item.panel.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
-        {{ item.panel.html | safe if item.panel.html else item.panel.text }}
-      </div>
-    {% endif %}
-  {% endfor %}
+  {% if 'items' in params and params['items'] | length %}
+    {% for item in params['items'] %}
+      {% if item %}
+        {% set id = item.id if item.id else idPrefix + "-" ~ loop.index %}
+        <div class="govuk-tabs__panel{% if loop.index > 1 %} govuk-tabs__panel--hidden{% endif %}" id="{{ id }}"{% for attribute, value in (item.panel.attributes.items() if item.panel.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
+          {{ item.panel.html | safe if item.panel.html else item.panel.text }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 </div>
 
 {% endmacro %}

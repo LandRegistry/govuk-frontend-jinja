@@ -39,7 +39,7 @@
     'attributes': params.hint.attributes,
     'html': params.hint.html,
     'text': params.hint.text
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% endif %}
 {% if params.errorMessage %}
   {% set errorId = params.id + "-error" %}
@@ -51,7 +51,7 @@
     'html': params.errorMessage.html,
     'text': params.errorMessage.text,
     'visuallyHiddenText': params.errorMessage.visuallyHiddenText
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% endif %}
   <div class="govuk-date-input {%- if params.classes %} {{ params.classes }}{% endif %}"
     {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}
@@ -68,11 +68,11 @@
         'name': (params.namePrefix + "-" + item.name) if params.namePrefix else item.name,
         'value': item.value,
         'type': "text",
-        'inputmode': "numeric",
+        'inputmode': item.inputmode if item.inputmode else "numeric",
         'autocomplete': item.autocomplete,
         'pattern': item.pattern if item.pattern else "[0-9]*",
         'attributes': item.attributes
-      }) | trim }}
+      }) | indent(6) | trim }}
     </div>
   {% endfor %}
   </div>

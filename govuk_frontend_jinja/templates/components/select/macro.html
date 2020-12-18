@@ -7,6 +7,7 @@
    aria-describedby – for example hints or error messages -#}
 {% set describedBy = params.describedBy if params.describedBy else "" %}
 <div class="govuk-form-group {%- if params.errorMessage %} govuk-form-group--error{% endif %} {%- if params.formGroup and params.formGroup.classes %} {{ params.formGroup.classes }}{% endif %}">
+{% if params.label %}
   {{ govukLabel({
     'html': params.label.html,
     'text': params.label.text,
@@ -15,6 +16,7 @@
     'attributes': params.label.attributes,
     'for': params.id
   }) | trim }}
+{% endif %}
 {% if params.hint %}
   {% set hintId = params.id + '-hint' %}
   {% set describedBy = describedBy + ' ' + hintId if describedBy else hintId %}
@@ -40,14 +42,16 @@
 {% endif %}
   <select class="govuk-select
     {%- if params.classes %} {{ params.classes }}{% endif %}{%- if params.errorMessage %} govuk-select--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}" {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %} {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
-  {% for item in params['items'] %}
-    {% if item %}
-      <option value="{{ item.value }}"
-        {{-" selected" if item.selected }}
-        {{-" disabled" if item.disabled }}
-        {%- for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor -%}>{{ item.text }}</option>
-    {% endif %}
-  {% endfor %}
+  {% if 'items' in params and params['items'] | length %}
+    {% for item in params['items'] %}
+      {% if item %}
+        <option value="{{ item.value }}"
+          {{-" selected" if item.selected }}
+          {{-" disabled" if item.disabled }}
+          {%- for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor -%}>{{ item.text }}</option>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
   </select>
 </div>
 

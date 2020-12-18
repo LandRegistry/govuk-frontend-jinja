@@ -4,7 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.0.0...master)
+## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.1.0...main)
+
+## [1.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.1.0) - 18/12/2020
+
+### Added
+
+- [Notification banner](https://design-system.service.gov.uk/components/notification-banner/) component support
+- Text input [prefix and suffix](https://design-system.service.gov.uk/components/text-input/#prefixes-and-suffixes) support
+- Custom `inputmode` in the date input component
+
+### Changed
+
+- Update to [GOV.UK Frontend v3.10.2](https://github.com/alphagov/govuk-frontend/releases/tag/v3.10.2)
+- Update to [`govuk-frontend-diff v.1.1.1](https://github.com/surevine/govuk-frontend-diff/releases/tag/v1.1.1)
 
 ## [1.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.0.0) - 20/08/2020
 

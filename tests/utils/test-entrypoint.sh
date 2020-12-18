@@ -5,4 +5,4 @@ set -e
 flake8 .
 (cd tests/utils && nohup python -m flask run --port 3000 &)
 wait-for-it localhost:3000
-./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.8.0
+./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.10.2 --exclude=details
