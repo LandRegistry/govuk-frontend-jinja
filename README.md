@@ -7,7 +7,7 @@
 This repository provides a complete set of [Jinja](https://jinja.palletsprojects.com/) macro ports that are kept up-to-date and 100% compliant with the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend) Nunjucks macros. Porting is intentionally manual rather than automated to make updates simpler than maintaining an automated conversion routine. A [comprehensive test suite](https://github.com/surevine/govuk-frontend-diff) ensures compliance against the latest, and every subsequent, GOV.UK Frontend release.
 
 - Package: [https://pypi.org/project/govuk-frontend-jinja/](https://pypi.org/project/govuk-frontend-jinja/)
-- Demo app: [https://github.com/LandRegistry/govuk-frontend-jinja-example](https://github.com/LandRegistry/govuk-frontend-jinja-example)
+- Demo app: [https://github.com/LandRegistry/govuk-frontend-jinja-demo](https://github.com/LandRegistry/govuk-frontend-jinja-demo)
 - Live demo: [https://govuk-frontend-jinja.herokuapp.com/](https://govuk-frontend-jinja.herokuapp.com/)
 
 ## How to use
