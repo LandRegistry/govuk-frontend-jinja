@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.1.0...main)
 
+### Changed
+
+- Update to [GOV.UK Frontend v3.11.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.11.0)
+
 ### Fixed
 
 - Missing install dependency on Jinja2
