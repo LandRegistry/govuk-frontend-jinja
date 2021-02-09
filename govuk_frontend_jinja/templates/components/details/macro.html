@@ -6,7 +6,7 @@
     </span>
   </summary>
   <div class="govuk-details__text">
-    {{ params.html | safe if params.html else params.text }}
+    <pre><code>{{ params.html | safe if params.html else params.text }}</code></pre>
   </div>
 </details>
 
