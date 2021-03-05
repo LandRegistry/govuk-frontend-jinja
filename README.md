@@ -60,3 +60,11 @@ We welcome contribution from the community. If you want to contribute to this pr
 
 - [Matt Shaw](https://github.com/matthew-shaw) (Primary maintainer)
 - [Andy Mantell](https://github.com/andymantell) (Original author)
+
+## Support
+
+This software is provided _"as-is"_ without warranty. Support is provided on a _"best endeavours"_ basis by the maintainers and open source community.
+
+If you are a civil servant you can sign up to the [UK Government Digital Slack](https://ukgovernmentdigital.slack.com/signup) workspace to contact the maintainers listed [above](#contributors) and the community of people using this project in the [#govuk-design-system](https://ukgovernmentdigital.slack.com/archives/C6DMEH5R6) channel.
+
+Otherwise, please see the [contribution guidelines](CONTRIBUTING.md) for how to raise a bug report or feature request.
