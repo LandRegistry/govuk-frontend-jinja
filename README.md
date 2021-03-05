@@ -4,6 +4,8 @@
 ![govuk-frontend 3.11.0](https://img.shields.io/badge/govuk--frontend%20version-3.11.0-005EA5?logo=gov.uk&style=flat)
 ![Build](https://github.com/LandRegistry/govuk-frontend-jinja/workflows/Build/badge.svg)
 
+**This is a [GOV.UK Design System Community Resource](https://design-system.service.gov.uk/community/resources-and-tools/), created and maintained by HM Land Registry**
+
 This repository provides a complete set of [Jinja](https://jinja.palletsprojects.com/) macro ports that are kept up-to-date and 100% compliant with the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend) Nunjucks macros. Porting is intentionally manual rather than automated to make updates simpler than maintaining an automated conversion routine. A [comprehensive test suite](https://github.com/surevine/govuk-frontend-diff) ensures compliance against the latest, and every subsequent, GOV.UK Frontend release.
 
 - Package: [https://pypi.org/project/govuk-frontend-jinja/](https://pypi.org/project/govuk-frontend-jinja/)
@@ -49,6 +51,10 @@ This is all wrapped up in `./test.sh` for simplified running (Requires Docker).
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/LandRegistry/govuk-frontend-jinja/tags).
+
+## How to contribute
+
+We welcome contribution from the community. If you want to contribute to this project, please review the [code of conduct](CODE_OF_CONDUCT.md) and [contribution guidelines](CONTRIBUTING.md).
 
 ## Contributors
 
