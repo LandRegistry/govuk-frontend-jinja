@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Update to [GOV.UK Frontend v3.12.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.12.0)
 - Pin Jinja2 requirement to less than v3.0.0 due to [this bug](https://github.com/pallets/jinja/issues/1427) at time of release
+- Exclude tests directory from distribution package
 
 ## [1.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.2.1) - 05/03/2021
 
