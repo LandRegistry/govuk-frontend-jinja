@@ -13,14 +13,14 @@ for directory in directories:
 
 setuptools.setup(
     name="govuk-frontend-jinja",
-    version="1.2.1",
+    version="1.3.0",
     author="Matt Shaw",
     author_email="matthew.shaw@landregistry.gov.uk",
     description="GOV.UK Frontend Jinja Macros",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/LandRegistry/govuk-frontend-jinja",
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=["tests"]),
     package_data={"govuk_frontend_jinja": components},
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -34,5 +34,5 @@ setuptools.setup(
         "Topic :: Text Processing :: Markup :: HTML",
     ],
     python_requires=">=3.6",
-    install_requires=["jinja2"],
+    install_requires=["jinja2<3.0.0"],
 )
