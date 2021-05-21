@@ -1,2 +1,2 @@
 flake8==3.9.2
-flask==1.1.4  # Latest 2.0.0
+flask==2.0.0  # Latest 2.0.0
