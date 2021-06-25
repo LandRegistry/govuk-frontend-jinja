@@ -1,7 +1,7 @@
 # GOV.UK Frontend Jinja Macros
 
 [![PyPI version](https://badge.fury.io/py/govuk-frontend-jinja.svg)](https://pypi.org/project/govuk-frontend-jinja/)
-![govuk-frontend 3.12.0](https://img.shields.io/badge/govuk--frontend%20version-3.12.0-005EA5?logo=gov.uk&style=flat)
+![govuk-frontend 3.13.0](https://img.shields.io/badge/govuk--frontend%20version-3.13.0-005EA5?logo=gov.uk&style=flat)
 ![Build](https://github.com/LandRegistry/govuk-frontend-jinja/workflows/Build/badge.svg)
 
 **This is a [GOV.UK Design System Community Resource](https://design-system.service.gov.uk/community/resources-and-tools/), created and maintained by HM Land Registry**
@@ -43,7 +43,7 @@ There is a test server at `tests/utils/app.py` which you will need to run using 
 You can then run the tests using `govuk-frontend-diff` as follows:
 
 ```bash
-./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.12.0
+./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.13.0
 ```
 
 This is all wrapped up in `./test.sh` for simplified running (Requires Docker).
