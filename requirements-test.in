@@ -1,4 +1,4 @@
-flake8==3.9.2  # Latest 4.0.1
+flake8==4.0.1
 flask==1.1.4  # Latest 2.0.2
 # Generated with piprot 0.9.10
-# Your requirements are 298 days out of date
+# Your requirements are 143 days out of date

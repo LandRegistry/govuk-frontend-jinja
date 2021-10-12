@@ -6,7 +6,7 @@
 #
 click==7.1.2
     # via flask
-flake8==3.9.2
+flake8==4.0.1
     # via -r requirements-test.in
 flask==1.1.4
     # via -r requirements-test.in
@@ -18,9 +18,9 @@ markupsafe==2.0.1
     # via jinja2
 mccabe==0.6.1
     # via flake8
-pycodestyle==2.7.0
+pycodestyle==2.8.0
     # via flake8
-pyflakes==2.3.1
+pyflakes==2.4.0
     # via flake8
 werkzeug==1.0.1
     # via flask
