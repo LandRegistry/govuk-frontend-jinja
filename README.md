@@ -16,15 +16,15 @@ This repository provides a complete set of [Jinja](https://jinja.palletsprojects
 
 The following table shows the version of GOV.UK Frontend Jinja that you should use for your targeted version of GOV.UK Frontend:
 
-| GOV.UK Frontend Version | GOV.UK Frontend Jinja Version |
-| ----------------------- | ----------------------------- |
-| <=[3.14.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.14.0) | [1.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.5.0) |
-| [3.13.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.13.0) | [1.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.4.0) |
-| [3.12.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.12.0) | [1.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.3.0) |
-| [3.11.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.11.0) | [1.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.2.1) |
-| [3.10.2](https://github.com/alphagov/govuk-frontend/releases/tag/v3.10.2) | [1.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.1.0) |
-| [3.8.1](https://github.com/alphagov/govuk-frontend/releases/tag/v3.8.1) | [1.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.0.0) |
-| [3.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.7.0) | [0.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.1) |
+| GOV.UK Frontend Jinja Version | Target GOV.UK Frontend Version |
+| ----------------------------- | ------------------------------ |
+| [1.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.5.0) | <=[3.14.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.14.0) |
+| [1.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.4.0) | <=[3.13.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.13.0) |
+| [1.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.3.0) | <=[3.12.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.12.0) |
+| [1.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.2.1) | <=[3.11.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.11.0) |
+| [1.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.1.0) | <=[3.10.2](https://github.com/alphagov/govuk-frontend/releases/tag/v3.10.2) |
+| [1.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.0.0) | <=[3.8.1](https://github.com/alphagov/govuk-frontend/releases/tag/v3.8.1) |
+| [0.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.1) | <=[3.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.7.0) |
 
 Any other versions of GOV.UK Frontend not shown above _may_ still be compatible, but have not been tested and verified.
 
