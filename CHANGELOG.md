@@ -18,7 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 
 - Update to [GOV.UK Frontend v3.14.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.14.0)
-- The package now requires Jinja versions `<3.0.0,>=3.0.2`
+- The package now requires Jinja versions `<3.0.0>=3.0.2`
 
 ## [1.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.4.0) - 29/06/2021
 

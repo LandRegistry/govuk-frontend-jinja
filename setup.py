@@ -34,5 +34,5 @@ setuptools.setup(
         "Topic :: Text Processing :: Markup :: HTML",
     ],
     python_requires=">=3.6",
-    install_requires=["jinja2<3.0.0,>=3.0.2"],
+    install_requires=["jinja2<3.0.0>=3.0.2"],
 )
