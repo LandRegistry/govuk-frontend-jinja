@@ -4,9 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.5.0...main)
+## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.5.1...main)
 
-## [1.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.5.0) -xx/10/2021
+## [1.5.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.5.1) -14/10/2021
+
+### Fixed
+
+- Resolve incompatible dependencies with Flask 2.0.0 and greater
+
+## [1.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.5.0) -14/10/2021
 
 ### Added
 
