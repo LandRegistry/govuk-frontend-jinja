@@ -4,7 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.4.0...main)
+## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.5.0...main)
+
+## [1.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.5.0) -xx/10/2021
+
+### Added
+
+- Support for [Jinja v3.0.2](https://jinja.palletsprojects.com/en/3.0.x/changes/) and above, now that [this loop scoping bug](https://github.com/pallets/jinja/issues/1427) has been fixed.
+- The above also means support for [Flask v2.0.0](https://flask.palletsprojects.com/en/2.0.x/changes/) and above
+- Support for [Python v3.10](https://www.python.org/downloads/release/python-3100/)
+- Compatibility and "how to use" documentation in the [README](README.md)
+
+### Changed
+
+- Update to [GOV.UK Frontend v3.14.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.14.0)
+- The package now requires Jinja versions `<3.0.0>=3.0.2`
 
 ## [1.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.4.0) - 29/06/2021
 

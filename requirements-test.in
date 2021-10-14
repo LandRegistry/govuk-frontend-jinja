@@ -1,2 +1,4 @@
-flake8==3.9.2
-flask==1.1.4  # Latest 2.0.1
+flake8==4.0.1
+flask==2.0.2
+# Generated with piprot 0.9.10
+# Looks like you've been keeping up to date, time for a delicious beverage!
