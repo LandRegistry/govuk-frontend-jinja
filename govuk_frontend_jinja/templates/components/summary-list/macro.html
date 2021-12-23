@@ -18,7 +18,7 @@
   {% for row in params.rows %}
     {% if row %}
       <div class="govuk-summary-list__row {%- if row.classes %} {{ row.classes }}{% endif %}">
-        <dt class="govuk-summary-list__key {%- if row.key.classes %} {{ row.key.classes }}{% endif %}">
+        <dt class="govuk-summary-list__key {%- if anyRowHasActions and not row.actions.items %} govuk-summary-list__row--no-actions{% endif %} {%- if row.key.classes %} {{ row.key.classes }}{% endif %}">
           {{ row.key.html | safe if row.key.html else row.key.text }}
         </dt>
         <dd class="govuk-summary-list__value {%- if row.value.classes %} {{ row.value.classes }}{% endif %}">
@@ -38,9 +38,6 @@
               </ul>
             {% endif %}
           </dd>
-        {% elif ns.anyRowHasActions %}
-          {# Add dummy column to extend border #}
-          <span class="govuk-summary-list__actions"></span>
         {% endif %}
       </div>
     {% endif %}
