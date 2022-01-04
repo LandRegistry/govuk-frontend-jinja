@@ -5,7 +5,7 @@
     {% if 'navigation' in params and (params.navigation | length) %}
       <div class="govuk-footer__navigation">
         {% for nav in params.navigation %}
-          <div class="govuk-footer__section">
+          <div class="govuk-footer__section govuk-grid-column-{{ nav.width | default('full') }}">
             <h2 class="govuk-footer__heading govuk-heading-m">{{ nav.title }}</h2>
             {% if 'items' in nav and (nav['items'] | length) %}
               {% set listClasses %}
