@@ -15,7 +15,7 @@
     'isPageHeading': params.label.isPageHeading,
     'attributes': params.label.attributes,
     'for': params.id
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% endif %}
 {% if params.hint %}
   {% set hintId = params.id + '-hint' %}
@@ -26,7 +26,7 @@
     'attributes': params.hint.attributes,
     'html': params.hint.html,
     'text': params.hint.text
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% endif %}
 {% if params.errorMessage %}
   {% set errorId = params.id + '-error' %}
@@ -38,21 +38,20 @@
     'html': params.errorMessage.html,
     'text': params.errorMessage.text,
     'visuallyHiddenText': params.errorMessage.visuallyHiddenText
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% endif %}
   <select class="govuk-select
     {%- if params.classes %} {{ params.classes }}{% endif %}{%- if params.errorMessage %} govuk-select--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}" {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %} {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
-  {% if 'items' in params and params['items'] | length %}
-    {% for item in params['items'] %}
-      {% if item %}
-        <option value="{{ item.value }}"
-          {{-" selected" if item.selected }}
-          {{-" disabled" if item.disabled }}
-          {%- for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor -%}>{{ item.text }}</option>
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+    {% if 'items' in params and params['items'] | length %}
+      {% for item in params['items'] %}
+        {% if item %}
+          <option value="{{ item.value }}"
+            {{-" selected" if item.selected | default(params.value and item.value == params.value) }}
+            {{-" disabled" if item.disabled }}
+            {%- for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor -%}>{{ item.text }}</option>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   </select>
 </div>
-
 {% endmacro %}
