@@ -27,7 +27,7 @@
   {% set ns.describedBy = ns.describedBy + ' ' + hintId if ns.describedBy else hintId %}
   {{ govukHint({
     'id': hintId,
-    'classes': params.hint.classes,
+    'classes': (params.hint.classes if params.hint and params.hint.classes),
     'attributes': params.hint.attributes,
     'html': params.hint.html,
     'text': params.hint.text
@@ -66,7 +66,7 @@
         {%- if item.divider %}
           <div class="govuk-checkboxes__divider">{{ item.divider }}</div>
         {%- else %}
-          {% set isChecked = item.checked | default(params.values and item.value in params.values) %}
+          {% set isChecked = item.checked | default(params.get("values", false) and item.value in params.get('values', [])) %}
           {% set hasHint = True if (item.hint.text if item.hint and item.hint.text) or (item.hint.html if item.hint and item.hint.html) %}
           {% set itemHintId = id + "-item-hint" if hasHint else "" %}
           {% set itemDescribedBy = ns.describedBy if not hasFieldset else "" %}
@@ -82,14 +82,14 @@
             {{ govukLabel({
               'html': item.html,
               'text': item.text,
-              'classes': 'govuk-checkboxes__label' + (' ' + item.label.classes if item.label and item.label.classes),
+              'classes': 'govuk-checkboxes__label' + (' ' + item.label.classes if item.label and item.label.classes else ''),
               'attributes': (item.label.attributes if item.label and item.label.attributes),
               'for': id
             }) | indent(6) | trim }}
             {% if hasHint %}
             {{ govukHint({
               'id': itemHintId,
-              'classes': 'govuk-checkboxes__hint' + (' ' + item.hint.classes if item.hint.classes),
+              'classes': 'govuk-checkboxes__hint' + (' ' + item.hint.classes if item.hint.classes else ''),
               'attributes': item.hint.attributes,
               'html': item.hint.html,
               'text': item.hint.text
