@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [GOV.UK Frontend v4.2.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.2.0) support
 - [Pagination component](https://design-system.service.gov.uk/components/pagination/)
 
+Thanks to [SentientHousePlant](https://github.com/SentientHousePlant)
+
 ## [2.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.2.0) - 18/05/2022
 
 ### Added
