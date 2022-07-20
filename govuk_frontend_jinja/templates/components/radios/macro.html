@@ -25,7 +25,7 @@
     'attributes': params.hint.attributes,
     'html': params.hint.html,
     'text': params.hint.text
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% endif %}
 {% if params.errorMessage %}
   {% set errorId = idPrefix + '-error' %}
@@ -37,9 +37,9 @@
     'html': params.errorMessage.html,
     'text': params.errorMessage.text,
     'visuallyHiddenText': params.errorMessage.visuallyHiddenText
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% endif %}
-  <div class="govuk-radios {%- if params.classes %} {{ params.classes }}{% endif %}{%- if ns.isConditional %} govuk-radios--conditional{% endif -%}"
+  <div class="govuk-radios {%- if params.classes %} {{ params.classes }}{% endif %}"
     {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}
     data-module="govuk-radios">
     {% for item in params['items'] %}
@@ -59,7 +59,7 @@
         {%- if item.divider %}
         <div class="govuk-radios__divider">{{ item.divider }}</div>
         {%- else %}
-        {% set isChecked = item.checked | default(params.value and (item.value == params.value)) %}
+        {% set isChecked = item.checked | default(params.value and item.value == params.value) %}
         {% set hasHint = True if (item.hint.text if item.hint and item.hint.text) or (item.hint.html if item.hint and item.hint.html) %}
         {% set itemHintId = id + '-item-hint' %}
         <div class="govuk-radios__item">
@@ -75,7 +75,7 @@
             'classes': 'govuk-radios__label' + (' ' + item.label.classes if item.label and item.label.classes else ''),
             'attributes': (item.label.attributes if item.label and item.label.attributes),
             'for': id
-          }) | trim }}
+          }) | indent(6) | trim }}
           {% if hasHint %}
           {{ govukHint({
             'id': itemHintId,
@@ -83,7 +83,7 @@
             'attributes': item.hint.attributes,
             'html': item.hint.html,
             'text': item.hint.text
-          }) | trim }}
+          }) | indent(6) | trim }}
           {% endif %}
         </div>
         {% if item.conditional and item.conditional.html %}
@@ -111,5 +111,4 @@
   {{ innerHtml | trim | safe }}
 {% endif %}
 </div>
-
 {% endmacro %}

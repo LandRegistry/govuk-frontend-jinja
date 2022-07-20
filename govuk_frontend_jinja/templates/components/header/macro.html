@@ -1,6 +1,6 @@
 {% macro govukHeader(params) %}
-<header class="govuk-header {{ params.classes if params.classes else '' }}" role="banner" data-module="govuk-header"
-  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
+<header class="govuk-header {{ params.classes if params.classes }}" role="banner" data-module="govuk-header"
+        {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
   <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
     <div class="govuk-header__logo">
       <a href="{{ params.homepageUrl | default('/') }}" class="govuk-header__link govuk-header__link--homepage">
@@ -10,9 +10,11 @@
           currentColor into the crown whilst continuing to support older browsers
           which do not support external SVGs without a Javascript polyfill. This
           adds approximately 1kb to every page load.
+
           We use currentColour so that we can easily invert it when printing and
           when the focus state is applied. This also benefits users who override
           colours in their browser as they will still see the crown.
+
           The SVG needs `focusable="false"` so that Internet Explorer does not
           treat it as an interactive element - without this it will be
           'focusable' when using the keyboard to navigate. #}
@@ -49,18 +51,19 @@
     <div class="govuk-header__content">
     {% if params.serviceName %}
     {% if params.serviceUrl %}
-       <a href="{{ params.serviceUrl }}" class="govuk-header__link govuk-header__service-name">
-         {{ params.serviceName }}
-       </a>
-     {% else%}
-       <span class="govuk-header__service-name">
-         {{ params.serviceName }}
-       </span>
-     {% endif %}
+      <a href="{{ params.serviceUrl }}" class="govuk-header__link govuk-header__service-name">
+        {{ params.serviceName }}
+      </a>
+    {% else%}
+      <span class="govuk-header__service-name">
+        {{ params.serviceName }}
+      </span>
+    {% endif %}
     {% endif %}
     {% if params.navigation %}
     <nav aria-label="{{ params.navigationLabel | default('Menu') }}" class="govuk-header__navigation {{ params.navigationClasses if params.navigationClasses }}">
       <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="{{ params.menuButtonLabel | default('Show or hide menu') }}">Menu</button>
+
       <ul id="navigation" class="govuk-header__navigation-list">
         {% for item in params.navigation %}
           {% if item.text or item.html %}
