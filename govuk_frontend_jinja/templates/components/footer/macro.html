@@ -69,7 +69,7 @@
           />
         </svg>
         <span class="govuk-footer__licence-description">
-          {% if params.contentLicence.html or params.contentLicence.text %}
+          {% if params.contentLicence and (params.contentLicence.html or params.contentLicence.text) %}
             {{ params.contentLicence.html | safe if params.contentLicence.html else params.contentLicence.text }}
           {% else %}
             All content is available under the
@@ -86,7 +86,7 @@
           class="govuk-footer__link govuk-footer__copyright-logo"
           href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
           >
-          {%- if params.copyright.html or params.copyright.text -%}
+          {%- if params.copyright and (params.copyright.html or params.copyright.text) -%}
             {{ params.copyright.html | safe if params.copyright.html else params.copyright.text }}
           {%- else -%}
             © Crown copyright
