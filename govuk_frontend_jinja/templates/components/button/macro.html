@@ -1,5 +1,5 @@
 {% macro govukButton(params) %}
-  {# Set classes for this component #}
+{# Set classes for this component #}
 {%- set classNames = "govuk-button" -%}
 
 {%- if params.classes %}
@@ -38,7 +38,7 @@ treat it as an interactive element - without this it will be
 
 {#- Define common attributes we can use for both button and input types #}
 
-{%- set buttonAttributes %}{% if params.name %} name="{{ params.name }}"{% endif %}{% if params.disabled %} disabled="disabled" aria-disabled="true"{% endif %}{% if params.preventDoubleClick %} data-prevent-double-click="true"{% endif %}{% endset %}
+{%- set buttonAttributes %}{% if params.name %} name="{{ params.name }}"{% endif %}{% if params.disabled %} disabled="disabled" aria-disabled="true"{% endif %}{% if params.preventDoubleClick is not undefined %} data-prevent-double-click="{{params.preventDoubleClick | lower}}"{% endif %}{% endset %}
 
 {#- Actually create a button... or a link! #}
 
@@ -59,5 +59,4 @@ treat it as an interactive element - without this it will be
 {%- elif element == 'input' %}
 <input value="{{ params.text }}" type="{{ params.type if params.type else 'submit' }}" {{- buttonAttributes | safe }} {{- commonAttributes | safe }}>
 {%- endif %}
-
 {% endmacro %}
