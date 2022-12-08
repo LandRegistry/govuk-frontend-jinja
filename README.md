@@ -99,7 +99,7 @@ How to update this package following a new release of GOV.UK Frontend:
 3. Take into account any idiosyncrasies between how Nunjucks and Jinja would interpret that template. E.g. `None` checking nested attributes, checking array items lengths or logic operators such as `is`, `not` and `in`.
 4. Run the tests [as described above](#running-the-tests)
 5. Resolve any failing tests by comparing the expected HTML output with the actual HTML reported by the test tool
-6. Add a new row to the [compatibility table](Compatibility) above to show which version of GOV.UK Frontend the next release of this package will be targeting.
+6. Add a new row to the [compatibility table](#compatibility) above to show which version of GOV.UK Frontend the next release of this package will be targeting.
 7. Once all tests are passing follow the [contribution guidelines](CONTRIBUTING.md) to raise a pull request.
 8. After the pull request has been merged, [create a new release](https://github.com/LandRegistry/govuk-frontend-jinja/releases/new) and tag following SemVer conventions.
 9. [GitHub Actions](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-publish.yml) will run on the new tag to build the package and publish it to PyPI. Verify that the package has been updated with the latest release tag by checking [the project page](https://pypi.org/project/govuk-frontend-jinja/)
