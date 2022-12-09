@@ -33,11 +33,11 @@
     'formGroup': params.formGroup,
     'classes': 'govuk-js-character-count' + (' ' + params.classes if params.classes else ''),
     'label': {
-      'html': params.label.html,
-      'text': params.label.text,
-      'classes': params.label.classes,
-      'isPageHeading': params.label.isPageHeading,
-      'attributes': params.label.attributes,
+      'html': params.label.html if params.label,
+      'text': params.label.text if params.label,
+      'classes': params.label.classes if params.label,
+      'isPageHeading': params.label.isPageHeading if params.label,
+      'attributes': params.label.attributes if params.label,
       'for': params.id
     },
     'hint': params.hint,
