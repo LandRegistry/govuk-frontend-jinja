@@ -11,5 +11,5 @@
  #   http://unicode.org/reports/tr35/tr35-numbers.html#Language_Plural_Rules
  #}
 {% macro govukPluralisedI18nAttributes(translationKey, pluralForms) %}
-    {% for pluralType, message in pluralForms %} data-i18n.{{translationKey}}.{{pluralType}}="{{message | escape}}"{% endfor %}
+    {% for pluralType, message in pluralForms.items() %} data-i18n.{{translationKey}}.{{pluralType}}="{{message | escape}}"{% endfor %}
 {% endmacro %}
