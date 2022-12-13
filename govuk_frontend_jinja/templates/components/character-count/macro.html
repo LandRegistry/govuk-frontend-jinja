@@ -16,7 +16,7 @@
   once the maximum gets configured there.
   So we only add the attribute if a textarea description was explicitely provided.
 #}
-{%- if hasNoLimit and params.textareaDescriptionText %}{{govukPluralisedI18nAttributes('textarea-description', {other: params.textareaDescriptionText})}}{% endif %}
+{%- if hasNoLimit and params.textareaDescriptionText %}{{govukPluralisedI18nAttributes('textarea-description', {'other': params.textareaDescriptionText})}}{% endif %}
 {%- if params.charactersUnderLimitText %}{{govukPluralisedI18nAttributes('characters-under-limit', params.charactersUnderLimitText)}}{% endif %}
 {%- if params.charactersAtLimitText %} data-i18n.characters-at-limit="{{ params.charactersAtLimitText | escape}}"{% endif %}
 {%- if params.charactersOverLimitText %}{{govukPluralisedI18nAttributes('characters-over-limit', params.charactersOverLimitText)}}{% endif %}
