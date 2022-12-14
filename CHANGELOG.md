@@ -6,9 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/2.4.0...main)
 
-## [2.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.4.0) - xx/11/2022
+## [2.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.4.0) - 14/12/2022
+
+### Added
 
 - [GOV.UK Frontend v4.4.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.4.0) support
+- Python 3.11 support
+
+### Fixed
+
+- Python 3.7 dependecy resolution error, fixed by specifying specific requirements files for each supported Python version in the build matrix.
+
+Thanks to [Leo Hemstead](https://github.com/leohemsted) and [Andy Mantell](https://github.com/andymantell)
 
 ## [2.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.3.0) - 22/07/2022
 
