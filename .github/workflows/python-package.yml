@@ -30,7 +30,7 @@ jobs:
         python -m pip install flake8 safety
         pip install -r requirements-test-${{ matrix.python-version }}.txt
     - name: Check dependencies for known security vulnerabilities
-      run: safety check -r requirements-test.txt
+      run: safety check -r requirements-test-${{ matrix.python-version }}.txt
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
