@@ -10,7 +10,7 @@ flake8==6.0.0
     # via -r requirements-test.in
 flask==2.2.2
     # via -r requirements-test.in
-importlib-metadata==5.1.0
+importlib-metadata==6.0.0
     # via flask
 itsdangerous==2.1.2
     # via flask
