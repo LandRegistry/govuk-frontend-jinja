@@ -4,7 +4,7 @@
 {% from "govuk_frontend_jinja/components/label/macro.html" import govukLabel %}
 
 {#- a record of other elements that we need to associate with the input using
-   aria-describedby – for example hints or error messages -#}
+  aria-describedby – for example hints or error messages -#}
 {% set describedBy = params.describedBy if params.describedBy else "" %}
 <div class="govuk-form-group {%- if params.errorMessage %} govuk-form-group--error{% endif %} {%- if params.formGroup and params.formGroup.classes %} {{ params.formGroup.classes }}{% endif %}">
   {{ govukLabel({
@@ -40,6 +40,7 @@
 {% endif %}
   <textarea class="govuk-textarea {{- ' govuk-textarea--error' if params.errorMessage else '' }} {{- ' ' + params.classes if params.classes else ''}}" id="{{ params.id }}" name="{{ params.name }}" rows="{%if params.rows %} {{- params.rows -}} {% else %}5{%endif %}"
   {%- if (params.spellcheck == false) or (params.spellcheck == true) %} spellcheck="{{ params.spellcheck | lower }}"{% endif %}
+  {%- if params.disabled %} disabled{% endif %}
   {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %}
   {%- if params.autocomplete %} autocomplete="{{ params.autocomplete}}"{% endif %}
   {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>{{ params.value }}</textarea>
