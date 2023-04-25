@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/2.5.0...main)
+## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/2.6.0...main)
+
+## [2.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.6.0) - 25/04/2023
+
+### Added
+
+- [GOV.UK Frontend v4.6.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.6.0) support
+
+Thanks to [Cameron Lamb](https://github.com/jafacakes2011)
 
 ## [2.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.5.0) - 14/02/2023
 
@@ -32,7 +40,7 @@ Thanks to [Leo Hemstead](https://github.com/leohemsted) and [Andy Mantell](https
 - [GOV.UK Frontend v4.2.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.2.0) support
 - [Pagination component](https://design-system.service.gov.uk/components/pagination/)
 
-Thanks to [SentientHousePlant](https://github.com/SentientHousePlant)
+Thanks to [Indigo Harrington](https://github.com/SentientHousePlant)
 
 ## [2.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.2.0) - 18/05/2022
 
