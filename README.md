@@ -110,6 +110,8 @@ How to update this package following a new release of GOV.UK Frontend:
 - [Matt Shaw](https://github.com/matthew-shaw) (Primary maintainer)
 - [Andy Mantell](https://github.com/andymantell) (Original author)
 
+See the full list of [contributors on GitHub](https://github.com/LandRegistry/govuk-frontend-jinja/graphs/contributors)
+
 ## Support
 
 This software is provided _"as-is"_ without warranty. Support is provided on a _"best endeavours"_ basis by the maintainers and open source community.
