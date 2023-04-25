@@ -4,7 +4,7 @@
 {% from "govuk_frontend_jinja/components/label/macro.html" import govukLabel %}
 
 {#- a record of other elements that we need to associate with the input using
-   aria-describedby – for example hints or error messages -#}
+  aria-describedby – for example hints or error messages -#}
 {% set describedBy = params.describedBy if params.describedBy else "" %}
 <div class="govuk-form-group {%- if params.errorMessage %} govuk-form-group--error{% endif %} {%- if params.formGroup and params.formGroup.classes %} {{ params.formGroup.classes }}{% endif %}">
 {% if params.label %}
@@ -41,7 +41,10 @@
   }) | indent(2) | trim }}
 {% endif %}
   <select class="govuk-select
-    {%- if params.classes %} {{ params.classes }}{% endif %}{%- if params.errorMessage %} govuk-select--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}" {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %} {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
+    {%- if params.classes %} {{ params.classes }}{% endif %}{%- if params.errorMessage %} govuk-select--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}"
+    {%- if params.disabled %} disabled{% endif %}
+    {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %}
+    {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
     {% if 'items' in params and params['items'] | length %}
       {% for item in params['items'] %}
         {% if item %}
