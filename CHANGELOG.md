@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - [GOV.UK Frontend v4.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.7.0) support
+- [Exit this page component](https://design-system.service.gov.uk/components/exit-this-page/)
 
 ## [2.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.6.0) - 25/04/2023
 
