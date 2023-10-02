@@ -10,7 +10,7 @@ click==8.1.4
     # via flask
 flake8==6.0.0
     # via -r requirements-test.in
-flask==2.3.2
+flask==3.0.0
     # via -r requirements-test.in
 itsdangerous==2.1.2
     # via flask
@@ -26,5 +26,5 @@ pycodestyle==2.10.0
     # via flake8
 pyflakes==3.0.1
     # via flake8
-werkzeug==2.3.6
+werkzeug==3.0.0
     # via flask
