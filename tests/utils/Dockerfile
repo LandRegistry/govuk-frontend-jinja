@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.11
 
 WORKDIR /src
 
@@ -8,7 +8,7 @@ RUN curl -L https://github.com/surevine/govuk-frontend-diff/releases/download/v1
     chmod +x ./govuk-frontend-diff
 
 ADD requirements-test-3.10.txt .
-RUN pip3 install -r requirements-test-3.10.txt
+RUN pip3 install -r requirements-test-3.11.txt
 
 ADD tests/utils tests/utils
 ADD setup.cfg .
