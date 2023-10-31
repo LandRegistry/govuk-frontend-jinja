@@ -5,9 +5,6 @@
 {%- if params.classes %}
   {% set classNames = classNames + " " + params.classes %}
 {% endif %}
-{% if params.disabled %}
-  {% set classNames = classNames + " govuk-button--disabled" %}
-{% endif -%}
 
 {# Determine type of element to use, if not explicitly set #}
 {%- if params.element %}
@@ -38,7 +35,7 @@ treat it as an interactive element - without this it will be
 
 {#- Define common attributes we can use for both button and input types #}
 
-{%- set buttonAttributes %}{% if params.name %} name="{{ params.name }}"{% endif %}{% if params.disabled %} disabled="disabled" aria-disabled="true"{% endif %}{% if params.preventDoubleClick is not undefined %} data-prevent-double-click="{{params.preventDoubleClick | lower}}"{% endif %}{% endset %}
+{%- set buttonAttributes %}{% if params.name %} name="{{ params.name }}"{% endif %}{% if params.disabled %} disabled aria-disabled="true"{% endif %}{% if params.preventDoubleClick is not undefined %} data-prevent-double-click="{{params.preventDoubleClick | lower}}"{% endif %}{% endset %}
 
 {#- Actually create a button... or a link! #}
 
@@ -46,14 +43,14 @@ treat it as an interactive element - without this it will be
 <a href="{{ params.href if params.href else '#' }}" role="button" draggable="false" {{- commonAttributes | safe }}>
   {{ params.html | safe if params.html else params.text }}
 {# Indentation is intentional to output HTML nicely #}
-{{- iconHtml | safe | trim if iconHtml -}}
+{{- iconHtml | safe | trim | indent(2, true) if iconHtml -}}
 </a>
 
 {%- elif element == 'button' %}
-<button {%- if params.value %} value="{{ params.value }}"{% endif %}{%- if params.type %} type="{{ params.type }}"{% endif %} {{- buttonAttributes | safe }} {{- commonAttributes | safe }}>
+<button {%- if params.value %} value="{{ params.value }}"{% endif %} type="{{ params.type if params.type else 'submit' }}" {{- buttonAttributes | safe }} {{- commonAttributes | safe }}>
   {{ params.html | safe if params.html else params.text }}
 {# Indentation is intentional to output HTML nicely #}
-{{- iconHtml | safe | trim if iconHtml -}}
+{{- iconHtml | safe | trim | indent(2, true) if iconHtml -}}
 </button>
 
 {%- elif element == 'input' %}
