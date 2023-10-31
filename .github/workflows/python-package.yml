@@ -40,7 +40,7 @@ jobs:
     - name: Prepare to test
       run: |
         sudo apt-get install wait-for-it
-        curl -L https://github.com/surevine/govuk-frontend-diff/releases/download/v1.1.2/govuk-frontend-diff-linux --output govuk-frontend-diff
+        curl -L https://github.com/matthew-shaw/govuk-frontend-diff/releases/download/v2.0.0-rc.1/govuk-frontend-diff-linux --output govuk-frontend-diff
         chmod +x govuk-frontend-diff
     - name: Test with govuk-frontend-diff
       run: |
