@@ -14,17 +14,17 @@
     'isPageHeading': params.label.isPageHeading,
     'attributes': params.label.attributes,
     'for': params.id
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% if params.hint %}
   {% set hintId = params.id + '-hint' %}
   {% set describedBy = describedBy + ' ' + hintId if describedBy else hintId %}
   {{ govukHint({
     'id': hintId,
-    'classes': (params.hint.classes if params.hint and params.hint.classes),
+    'classes': params.hint.classes,
     'attributes': params.hint.attributes,
     'html': params.hint.html,
     'text': params.hint.text
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% endif %}
 {% if params.errorMessage %}
   {% set errorId = params.id + '-error' %}
@@ -36,7 +36,7 @@
     'html': params.errorMessage.html,
     'text': params.errorMessage.text,
     'visuallyHiddenText': params.errorMessage.visuallyHiddenText
-  }) | trim }}
+  }) | indent(2) | trim }}
 {% endif %}
   <input class="govuk-file-upload {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.errorMessage %} govuk-file-upload--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}" type="file"
   {%- if params.value %} value="{{ params.value }}"{% endif %}
@@ -44,5 +44,4 @@
   {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %}
   {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
 </div>
-
 {% endmacro %}

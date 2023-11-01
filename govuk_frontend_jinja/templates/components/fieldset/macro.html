@@ -4,22 +4,21 @@
   {%- if params.role %} role="{{ params.role }}"{% endif %}
   {%- if params.describedBy %} aria-describedby="{{ params.describedBy }}"{% endif %}
   {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
-  {% if params.legend and (params.legend.html or params.legend.text) %}
+  {% if params.legend.html or params.legend.text %}
   <legend class="govuk-fieldset__legend {%- if params.legend.classes %} {{ params.legend.classes }}{% endif %}">
-    {% if params.legend.isPageHeading %}
-      <h1 class="govuk-fieldset__heading">
-        {{ params.legend.html | safe if params.legend.html else params.legend.text }}
-      </h1>
-    {% else %}
+  {% if params.legend.isPageHeading %}
+    <h1 class="govuk-fieldset__heading">
       {{ params.legend.html | safe if params.legend.html else params.legend.text }}
-    {% endif %}
+    </h1>
+  {% else %}
+    {{ params.legend.html | safe if params.legend.html else params.legend.text }}
+  {% endif %}
   </legend>
   {% endif %}
-  {% if caller %} {#- if statement allows usage of `call` to be optional -#}
-    {{ caller() }}
-  {% elif params.html %}
-    {{ params.html | safe }}
-  {% endif %}
+{% if caller %} {#- if statement allows usage of `call` to be optional -#}
+  {{ caller() }}
+{% elif params.html %}
+  {{ params.html | safe }}
+{% endif %}
 </fieldset>
-
 {% endmacro %}
