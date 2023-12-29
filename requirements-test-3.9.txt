@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements-test-3.9.txt requirements-test.in
 #
-blinker==1.6.3
+blinker==1.7.0
     # via flask
 click==8.1.7
     # via flask
@@ -12,7 +12,7 @@ flake8==6.1.0
     # via -r requirements-test.in
 flask==3.0.0
     # via -r requirements-test.in
-importlib-metadata==6.8.0
+importlib-metadata==7.0.1
     # via flask
 itsdangerous==2.1.2
     # via flask
