@@ -6,7 +6,7 @@
   {% set classNames = classNames + " " + params.classes %}
 {% endif %}
 
-{# Determine type of element to use, if not explicitly set #}
+{#- Determine type of element to use, if not explicitly set #}
 {%- if params.element %}
   {% set element = params.element | lower %}
 {% else %}
@@ -31,11 +31,11 @@ treat it as an interactive element - without this it will be
 
 {#- Define common attributes that we can use across all element types #}
 
-{%- set commonAttributes %} class="{{ classNames }}" data-module="govuk-button"{% for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}{% if params.id %} id="{{ params.id }}"{% endif %}{% endset %}
+{%- set commonAttributes %} class="{{ classNames }}" data-module="govuk-button" {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}{% if params.id %} id="{{ params.id }}"{% endif %}{% endset %}
 
 {#- Define common attributes we can use for both button and input types #}
 
-{%- set buttonAttributes %}{% if params.name %} name="{{ params.name }}"{% endif %}{% if params.disabled %} disabled aria-disabled="true"{% endif %}{% if params.preventDoubleClick is not undefined %} data-prevent-double-click="{{params.preventDoubleClick | lower}}"{% endif %}{% endset %}
+{%- set buttonAttributes %}{% if params.name %} name="{{ params.name }}"{% endif %}{% if params.disabled %} disabled aria-disabled="true"{% endif %}{% if params.preventDoubleClick is not undefined %} data-prevent-double-click="{{ params.preventDoubleClick | lower }}"{% endif %}{% endset %}
 
 {#- Actually create a button... or a link! #}
 
