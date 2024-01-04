@@ -1,5 +1,5 @@
 {% macro govukTextarea(params) %}
-{% from "govuk_frontend_jinja/components/error-message/macro.html" import govukErrorMessage -%}
+{% from "govuk_frontend_jinja/components/error-message/macro.html" import govukErrorMessage %}
 {% from "govuk_frontend_jinja/components/hint/macro.html" import govukHint %}
 {% from "govuk_frontend_jinja/components/label/macro.html" import govukLabel %}
 
@@ -38,11 +38,11 @@
     'visuallyHiddenText': params.errorMessage.visuallyHiddenText
   }) | indent(2) | trim }}
 {% endif %}
-  <textarea class="govuk-textarea {{- ' govuk-textarea--error' if params.errorMessage }} {{- ' ' + params.classes if params.classes}}" id="{{ params.id }}" name="{{ params.name }}" rows="{%if params.rows %} {{- params.rows -}} {% else %}5{%endif %}"
-  {%- if (params.spellcheck == false) or (params.spellcheck == true) %} spellcheck="{{ params.spellcheck | lower }}"{% endif %}
+  <textarea class="govuk-textarea {%- if params.errorMessage %} govuk-textarea--error{% endif %} {%- if params.classes %} {{ params.classes }}{% endif %}" id="{{ params.id }}" name="{{ params.name }}" rows="{{ params.rows | default(5, true) }}"
+  {%- if (params.spellcheck | lower == false) or (params.spellcheck | lower == true) %} spellcheck="{{ params.spellcheck | lower }}"{% endif %}
   {%- if params.disabled %} disabled{% endif %}
   {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %}
-  {%- if params.autocomplete %} autocomplete="{{ params.autocomplete}}"{% endif %}
-  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>{{ params.value }}</textarea>
+  {%- if params.autocomplete %} autocomplete="{{ params.autocomplete }}"{% endif %}
+  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>{{ params.value }}</textarea>
 </div>
 {% endmacro %}
