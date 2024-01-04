@@ -1,23 +1,19 @@
 {% macro govukFooter(params) %}
-  <footer class="govuk-footer {{ params.classes if params.classes else '' }}" role="contentinfo"
-        {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
-  <div class="govuk-width-container {{ params.containerClasses if params.containerClasses else '' }}">
-    {% if 'navigation' in params and (params.navigation | length) %}
+<footer class="govuk-footer {%- if params.classes %} {{ params.classes }}{% endif %}" role="contentinfo"
+  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <div class="govuk-width-container {%- if params.containerClasses %} {{ params.containerClasses }}{% endif %}">
+    {% if params.navigation | length %}
       <div class="govuk-footer__navigation">
         {% for nav in params.navigation %}
-          <div class="govuk-footer__section govuk-grid-column-{{ nav.width | default('full') }}">
+          <div class="govuk-footer__section govuk-grid-column-{{ nav.width | default("full", true) }}">
             <h2 class="govuk-footer__heading govuk-heading-m">{{ nav.title }}</h2>
-            {% if 'items' in nav and (nav['items'] | length) %}
-              {% set listClasses %}
-                {% if nav.columns %}
-                  govuk-footer__list--columns-{{ nav.columns }}
-                {% endif %}
-              {% endset %}
-              <ul class="govuk-footer__list {{ listClasses | trim }}">
+            {% if nav['items'] | length %}
+              {% set listClasses = "govuk-footer__list--columns-" ~ nav.columns if nav.columns %}
+              <ul class="govuk-footer__list {%- if listClasses %} {{ listClasses }}{% endif %}">
                 {% for item in nav['items'] %}
                   {% if item.href and item.text %}
                     <li class="govuk-footer__list-item">
-                      <a class="govuk-footer__link" href="{{ item.href }}"{% for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
+                      <a class="govuk-footer__link" href="{{ item.href }}" {%- for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
                         {{ item.text }}
                       </a>
                     </li>
@@ -33,12 +29,12 @@
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
         {% if 'meta' in params %}
-          <h2 class="govuk-visually-hidden">{{ params.meta.visuallyHiddenTitle | default("Support links") }}</h2>
+          <h2 class="govuk-visually-hidden">{{ params.meta.visuallyHiddenTitle | default("Support links", true) }}</h2>
           {% if 'items' in params.meta and (params.meta['items'] | length) %}
             <ul class="govuk-footer__inline-list">
               {% for item in params.meta['items'] %}
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="{{ item.href }}"{% for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
+                  <a class="govuk-footer__link" href="{{ item.href }}" {%- for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
                     {{ item.text }}
                   </a>
                 </li>
@@ -85,7 +81,7 @@
         <a
           class="govuk-footer__link govuk-footer__copyright-logo"
           href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
-          >
+        >
           {%- if params.copyright and (params.copyright.html or params.copyright.text) -%}
             {{ params.copyright.html | safe if params.copyright.html else params.copyright.text }}
           {%- else -%}
@@ -96,5 +92,4 @@
     </div>
   </div>
 </footer>
-
 {% endmacro %}
