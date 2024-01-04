@@ -1,11 +1,12 @@
 {% macro govukInput(params) %}
-{% from "govuk_frontend_jinja/components/error-message/macro.html" import govukErrorMessage -%}
+{% from "govuk_frontend_jinja/components/error-message/macro.html" import govukErrorMessage %}
 {% from "govuk_frontend_jinja/components/hint/macro.html" import govukHint %}
 {% from "govuk_frontend_jinja/components/label/macro.html" import govukLabel %}
 
 {#- a record of other elements that we need to associate with the input using
   aria-describedby – for example hints or error messages -#}
-{% set describedBy = params.describedBy if params.describedBy else "" %}
+{% set describedBy = params.describedBy if params.describedBy else "" -%}
+
 <div class="govuk-form-group {%- if params.errorMessage %} govuk-form-group--error{% endif %} {%- if params.formGroup and params.formGroup.classes %} {{ params.formGroup.classes }}{% endif %}">
   {{ govukLabel({
     'html': params.label.html,
@@ -41,24 +42,24 @@
 
   {%- if params.prefix or params.suffix %}<div class="govuk-input__wrapper">{% endif -%}
 
-    {%- if params.prefix and (params.prefix.text or params.prefix.html) %}
-    <div class="govuk-input__prefix {{- ' ' + params.prefix.classes if params.prefix.classes }}" aria-hidden="true" {%- for attribute, value in (params.prefix.attributes.items() if params.prefix.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
+  {%- if params.prefix and (params.prefix.text or params.prefix.html) -%}
+    <div class="govuk-input__prefix {%- if params.prefix.classes %} {{ params.prefix.classes }}{% endif %}" aria-hidden="true" {%- for attribute, value in (params.prefix.attributes.items() if params.prefix.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
       {{- params.prefix.html | safe if params.prefix.html else params.prefix.text -}}
     </div>
   {% endif -%}
 
   <input class="govuk-input {%- if params.classes %} {{ params.classes }}{% endif %} {%- if params.errorMessage %} govuk-input--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}" type="{{ params.type | default("text", true) }}"
   {%- if (params.spellcheck == false) or (params.spellcheck == true) %} spellcheck="{{ params.spellcheck | lower }}"{% endif %}
-  {%- if params.value %} value="{{ params.value}}"{% endif %}
+  {%- if params.value %} value="{{ params.value }}"{% endif %}
   {%- if params.disabled %} disabled{% endif %}
   {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %}
-  {%- if params.autocomplete %} autocomplete="{{ params.autocomplete}}"{% endif %}
+  {%- if params.autocomplete %} autocomplete="{{ params.autocomplete }}"{% endif %}
   {%- if params.pattern %} pattern="{{ params.pattern }}"{% endif %}
   {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
-  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor -%}>
+  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
 
-  {%- if params.suffix and (params.suffix.text or params.suffix.html) %}
-    <div class="govuk-input__suffix {{- ' ' + params.suffix.classes if params.suffix.classes }}" aria-hidden="true" {%- for attribute, value in (params.suffix.attributes.items() if params.suffix.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
+  {%- if params.suffix and (params.suffix.text or params.suffix.html) -%}
+    <div class="govuk-input__suffix {%- if params.suffix.classes %} {{ params.suffix.classes }}{% endif %}" aria-hidden="true" {%- for attribute, value in (params.suffix.attributes.items() if params.suffix.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
       {{- params.suffix.html | safe if params.suffix.html else params.suffix.text -}}
     </div>
   {% endif -%}
