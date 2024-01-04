@@ -1,10 +1,10 @@
 {% macro govukAccordion(params) %}
 {% from "govuk_frontend_jinja/macros/i18n.html" import govukI18nAttributes %}
 
-{% set id = params.id %}
-{% set headingLevel = params.headingLevel if params.headingLevel else 2 %}
+{%- set id = params.id %}
+{% set headingLevel = params.headingLevel if params.headingLevel else 2 -%}
 
-<div class="govuk-accordion {%- if params.classes %} {{ params.classes }}{% endif -%}" data-module="govuk-accordion" id="{{ id }}"
+<div class="govuk-accordion {%- if params.classes %} {{ params.classes }}{% endif %}" data-module="govuk-accordion" id="{{ id }}"
   {{- govukI18nAttributes({
     'key': 'hide-all-sections',
     'message': params.hideAllSectionsText
@@ -36,7 +36,7 @@
   }) -}}
 
   {%- if params.rememberExpanded is not undefined %} data-remember-expanded="{{ params.rememberExpanded | escape | lower }}"{% endif %}
-  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
+  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
   {% for item in params['items'] %}
     {% if item %}
       <div class="govuk-accordion__section {%- if item.expanded %} govuk-accordion__section--expanded{% endif %}">
