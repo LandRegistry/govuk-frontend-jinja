@@ -1,17 +1,20 @@
 {% macro govukSummaryList(params) %}
-{%- macro _actionLink(action) %}
-  <a class="govuk-link {%- if action.classes %} {{ action.classes }}{% endif %}" href="{{ action.href }}" {%- for attribute, value in (action.attributes.items() if action.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
-    {{ action.html | safe if action.html else action.text }}
-    {%- if action.visuallyHiddenText -%}
-      <span class="govuk-visually-hidden"> {{ action.visuallyHiddenText }}</span>
-    {% endif -%}
+{%- macro _actionLink(action, cardTitle) %}
+  <a class="govuk-link {%- if action.classes %} {{ action.classes }}{% endif %}" href="{{ action.href }}" {%- for attribute, value in (action.attributes.items() if action.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
+    {{- action.html | safe if action.html else action.text -}}
+    {%- if action.visuallyHiddenText or cardTitle -%}
+      <span class="govuk-visually-hidden">
+        {%- if action.visuallyHiddenText %} {{ action.visuallyHiddenText }}{% endif -%}
+        {%- if cardTitle %} ({{ cardTitle.html | safe if cardTitle.html else cardTitle.text }}){% endif -%}
+      </span>
+    {%- endif -%}
   </a>
 {% endmacro -%}
 
 {%- macro _summaryCard(params) %}
   {%- set headingLevel = params.title.headingLevel if params.title and params.title.headingLevel else 2 -%}
 
-  <div class="govuk-summary-card {%- if params.classes %} {{ params.classes }}{% endif %}"{% for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
+  <div class="govuk-summary-card {%- if params.classes %} {{ params.classes }}{% endif %}" {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
     <div class="govuk-summary-card__title-wrapper">
       {%- if params.title -%}
         <h{{ headingLevel }} class="govuk-summary-card__title {%- if params.title.classes %} {{ params.title.classes }}{% endif %}">
@@ -22,13 +25,13 @@
       {%- if params.actions and params.actions['items'] | length -%}
         {%- if params.actions['items'] | length == 1 -%}
           <div class="govuk-summary-card__actions {%- if params.actions.classes %} {{ params.actions.classes }}{% endif %}">
-            {{- _actionLink(params.actions['items'][0]) -}}
+            {{- _actionLink(params.actions['items'][0], params.title) -}}
           </div>
         {%- else -%}
           <ul class="govuk-summary-card__actions {%- if params.actions.classes %} {{ params.actions.classes }}{% endif %}">
             {%- for action in params.actions['items'] -%}
               <li class="govuk-summary-card__action">
-                {{- _actionLink(action) -}}
+                {{- _actionLink(action, params.title) -}}
               </li>
             {%- endfor -%}
           </ul>
@@ -49,10 +52,10 @@
 {% endfor -%}
 
 {%- set summaryList -%}
-  <dl class="govuk-summary-list {%- if params.classes %} {{ params.classes }}{% endif %}"{% for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{attribute}}="{{value}}"{% endfor %}>
+  <dl class="govuk-summary-list {%- if params.classes %} {{ params.classes }}{% endif %}" {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
     {% for row in params.rows %}
       {% if row %}
-        <div class="govuk-summary-list__row {%- if ns.anyRowHasActions and not (row.actions and row.actions['items']) %} govuk-summary-list__row--no-actions{% endif %} {%- if row.classes %} {{ row.classes }}{% endif %}">
+        <div class="govuk-summary-list__row {%- if ns.anyRowHasActions and not (row.actions and row.actions['items'])%} govuk-summary-list__row--no-actions{% endif %} {%- if row.classes %} {{ row.classes }}{% endif %}">
           <dt class="govuk-summary-list__key {%- if row.key.classes %} {{ row.key.classes }}{% endif %}">
             {{ row.key.html | indent(4 if params.card else 0) | safe if row.key.html else row.key.text }}
           </dt>
@@ -61,13 +64,13 @@
           </dd>
           {% if row.actions and row.actions['items'] | length %}
             <dd class="govuk-summary-list__actions {%- if row.actions.classes %} {{ row.actions.classes }}{% endif %}">
-              {% if row.actions and row.actions['items'] | length == 1 %}
-                {{ _actionLink(row.actions['items'][0]) | indent(16 if params.card else 12) | trim }}
+              {% if row.actions['items'] | length == 1 %}
+                {{ _actionLink(row.actions['items'][0], params.card.title if params.card) | indent(16 if params.card else 12) | trim }}
               {% else %}
                 <ul class="govuk-summary-list__actions-list">
                   {%- for action in row.actions['items'] -%}
                     <li class="govuk-summary-list__actions-list-item">
-                      {{- _actionLink(action) | indent(22 if params.card else 18) | trim -}}
+                      {{- _actionLink(action, params.card.title if params.card) | indent(22 if params.card else 18) | trim -}}
                     </li>
                   {%- endfor -%}
                 </ul>
@@ -87,6 +90,4 @@
 {%- else -%}
   {{ summaryList | safe }}
 {%- endif %}
-
-
 {% endmacro %}
