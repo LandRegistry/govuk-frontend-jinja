@@ -26,5 +26,5 @@ pycodestyle==2.10.0
     # via flake8
 pyflakes==3.0.1
     # via flake8
-werkzeug==2.3.6
+werkzeug==2.3.8
     # via flask
