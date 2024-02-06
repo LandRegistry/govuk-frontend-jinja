@@ -80,7 +80,7 @@ There is a test server at `tests/utils/app.py` which you will need to run using 
 You can then run the tests using `govuk-frontend-diff` as follows:
 
 ```bash
-./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v4.0.0
+./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v4.8.0
 ```
 
 This is all wrapped up in `./test.sh` for simplified running (Requires Docker).
