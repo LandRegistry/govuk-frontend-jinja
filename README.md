@@ -16,6 +16,7 @@ The following table shows the version of GOV.UK Frontend Jinja that you should u
 
 | GOV.UK Frontend Jinja Version | Target GOV.UK Frontend Version |
 | ----------------------------- | ------------------------------ |
+| [2.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.8.0) | [4.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.8.0) |
 | [2.7.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.7.0) | [4.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.7.0) |
 | [2.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.6.0) | [4.6.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.6.0) |
 | [2.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.5.0) | [4.5.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.5.0) |
@@ -79,7 +80,7 @@ There is a test server at `tests/utils/app.py` which you will need to run using 
 You can then run the tests using `govuk-frontend-diff` as follows:
 
 ```bash
-./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v4.0.0
+./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v4.8.0
 ```
 
 This is all wrapped up in `./test.sh` for simplified running (Requires Docker).
