@@ -1,9 +1,9 @@
-FROM python:3.10
+FROM --platform=linux/amd64 ubuntu:20.04
 
 WORKDIR /src
 
 RUN apt-get update
-RUN apt-get install -y wait-for-it
+RUN apt-get install -y wait-for-it curl python3-pip
 RUN curl -L https://github.com/surevine/govuk-frontend-diff/releases/download/v1.1.2/govuk-frontend-diff-linux --output govuk-frontend-diff && \
     chmod +x ./govuk-frontend-diff
 
