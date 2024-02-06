@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11"]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
     - uses: actions/checkout@v3
@@ -46,5 +46,5 @@ jobs:
       run: |
         (cd tests/utils && nohup python -m flask run --port 3000 &)
         wait-for-it localhost:3000
-        ./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v4.7.0 --ci
+        ./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v4.8.0 --ci
 
