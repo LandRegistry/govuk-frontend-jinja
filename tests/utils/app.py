@@ -16,7 +16,7 @@ app.jinja_loader = PrefixLoader(
 
 # Template route
 @app.route("/template", methods=["POST"])
-def template():
+def template() -> str:
     data = request.json
 
     # Construct a page template which can override any of the blocks if they are specified
@@ -41,8 +41,8 @@ def template():
 
 
 # Component route
-@app.route("/component/<component>", methods=["POST"])
-def component(component):
+@app.route("/component/<string:component>", methods=["POST"])
+def component(component: str) -> str:
     data = request.json
 
     # Render the component using the data provided
