@@ -40,11 +40,11 @@ jobs:
     - name: Prepare to test
       run: |
         sudo apt-get install wait-for-it
-        curl -L https://github.com/surevine/govuk-frontend-diff/releases/download/v2.0.0/govuk-frontend-diff-linux --output govuk-frontend-diff
+        curl -L https://github.com/surevine/govuk-frontend-diff/releases/download/v1.1.2/govuk-frontend-diff-linux --output govuk-frontend-diff
         chmod +x govuk-frontend-diff
     - name: Test with govuk-frontend-diff
       run: |
         (cd tests/utils && nohup python -m flask run --port 3000 &)
         wait-for-it localhost:3000
-        ./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.15.0 --exclude page-template --ci
+        ./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v3.15.0 --ci
 
