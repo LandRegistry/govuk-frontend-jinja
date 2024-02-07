@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/1.6.0...v1)
 
-## [1.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.6.0) -xx/02/2024
+## [1.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.6.0) -07/02/2024
 
 ### Added
 
