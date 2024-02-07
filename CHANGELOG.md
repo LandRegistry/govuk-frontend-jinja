@@ -80,6 +80,16 @@ Thanks to [Indigo Harrington](https://github.com/SentientHousePlant)
 
 - Python 3.6 support
 
+## [1.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.6.0) -07/02/2024
+
+### Added
+
+- [GOV.UK Frontend v3.15.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.15.0) support
+
+### Removed
+
+- Python 3.6 support
+
 ## [1.5.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.5.1) -14/10/2021
 
 ### Fixed
