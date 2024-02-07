@@ -1,7 +1,7 @@
 # GOV.UK Frontend Jinja Macros
 
 [![PyPI version](https://badge.fury.io/py/govuk-frontend-jinja.svg)](https://pypi.org/project/govuk-frontend-jinja/)
-![govuk-frontend 5.0.0](https://img.shields.io/badge/govuk--frontend%20version-5.0.0-005EA5?logo=gov.uk&style=flat)
+![govuk-frontend 5.1.0](https://img.shields.io/badge/govuk--frontend%20version-5.1.0-005EA5?logo=gov.uk&style=flat)
 [![Python package](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml/badge.svg)](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml)
 
 **GOV.UK Frontend Jinja is a [community tool](https://design-system.service.gov.uk/community/resources-and-tools/) of the [GOV.UK Design System](https://design-system.service.gov.uk/). The Design System team is not responsible for it and cannot support you with using it. Contact the [maintainers](#contributors) directly if you need [help](#support) or you want to request a feature.**
