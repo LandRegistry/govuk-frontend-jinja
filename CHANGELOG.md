@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/2.8.0...main)
+## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/3.0.0...main)
+
+## [3.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.0.0) - xx/02/2024
+
+### Added
+
+- [GOV.UK Frontend v5.1.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.1.0) support
 
 ## [2.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.8.0) - 06/02/2024
 
