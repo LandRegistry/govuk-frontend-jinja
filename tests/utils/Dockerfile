@@ -4,7 +4,7 @@ WORKDIR /src
 
 RUN apt-get update
 RUN apt-get install -y wait-for-it
-RUN curl -L https://github.com/surevine/govuk-frontend-diff/releases/download/v1.1.2/govuk-frontend-diff-linux --output govuk-frontend-diff && \
+RUN curl -L https://github.com/matthew-shaw/govuk-frontend-diff/releases/download/v2.0.0/govuk-frontend-diff-linux --output govuk-frontend-diff && \
     chmod +x ./govuk-frontend-diff
 
 ADD requirements-test-3.11.txt .

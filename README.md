@@ -1,12 +1,12 @@
 # GOV.UK Frontend Jinja Macros
 
 [![PyPI version](https://badge.fury.io/py/govuk-frontend-jinja.svg)](https://pypi.org/project/govuk-frontend-jinja/)
-![govuk-frontend 4.8.0](https://img.shields.io/badge/govuk--frontend%20version-4.8.0-005EA5?logo=gov.uk&style=flat)
+![govuk-frontend 5.1.0](https://img.shields.io/badge/govuk--frontend%20version-5.1.0-005EA5?logo=gov.uk&style=flat)
 [![Python package](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml/badge.svg)](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml)
 
 **GOV.UK Frontend Jinja is a [community tool](https://design-system.service.gov.uk/community/resources-and-tools/) of the [GOV.UK Design System](https://design-system.service.gov.uk/). The Design System team is not responsible for it and cannot support you with using it. Contact the [maintainers](#contributors) directly if you need [help](#support) or you want to request a feature.**
 
-This repository provides a complete set of [Jinja](https://jinja.palletsprojects.com/) macros that are kept up-to-date and 100% compliant with the original [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend) Nunjucks macros. Porting is intentionally manual rather than automated to make updates simpler than maintaining an automated conversion routine. A [comprehensive test suite](https://github.com/surevine/govuk-frontend-diff) ensures compliance against the latest, and every subsequent, GOV.UK Frontend release.
+This repository provides a complete set of [Jinja](https://jinja.palletsprojects.com/) macros that are kept up-to-date and 100% compliant with the original [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend) Nunjucks macros. Porting is intentionally manual rather than automated to make updates simpler than maintaining an automated conversion routine. A [comprehensive test suite](https://github.com/matthew-shaw/govuk-frontend-diff) ensures compliance against the latest, and every subsequent, GOV.UK Frontend release.
 
 If you are looking to build a fully featured Flask app that integrates with [GOV.UK Frontend Jinja](https://github.com/LandRegistry/govuk-frontend-jinja) and [GOV.UK Frontend WTForms](https://github.com/LandRegistry/govuk-frontend-wtf) please use the [GOV.UK Frontend Flask](https://github.com/LandRegistry/govuk-frontend-flask) template repository to [generate your app](https://github.com/LandRegistry/govuk-frontend-flask/generate).
 
@@ -16,6 +16,7 @@ The following table shows the version of GOV.UK Frontend Jinja that you should u
 
 | GOV.UK Frontend Jinja Version | Target GOV.UK Frontend Version |
 | ----------------------------- | ------------------------------ |
+| [3.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.0.0) | [5.1.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.1.0) |
 | [2.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.8.0) | [4.8.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.8.0) |
 | [2.7.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.7.0) | [4.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.7.0) |
 | [2.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.6.0) | [4.6.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.6.0) |
@@ -69,7 +70,7 @@ The options available to each component macro can be found in the original [GOV.
 
 ## Running the tests
 
-The tests are run in a GitHub actions pipeline but if you want to run them locally you will need to install [govuk-frontend-diff](https://github.com/surevine/govuk-frontend-diff).
+The tests are run in a GitHub actions pipeline but if you want to run them locally you will need to install [govuk-frontend-diff](https://github.com/matthew-shaw/govuk-frontend-diff).
 
 There is a test server at `tests/utils/app.py` which you will need to run using the following command:
 
