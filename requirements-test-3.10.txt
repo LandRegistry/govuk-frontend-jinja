@@ -10,7 +10,7 @@ click==8.1.7
     # via flask
 flake8==7.0.0
     # via -r requirements-test.in
-flask==3.0.2
+flask==3.0.3
     # via -r requirements-test.in
 itsdangerous==2.1.2
     # via flask
