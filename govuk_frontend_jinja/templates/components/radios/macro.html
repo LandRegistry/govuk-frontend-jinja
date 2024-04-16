@@ -26,7 +26,7 @@
   {%- if item.divider %}
     <div class="govuk-radios__divider">{{ item.divider }}</div>
   {% else %}
-    {% set isChecked = item.checked | default((item.value == params.value and item.checked != false) if params.value else false, true) %}
+    {% set isChecked = item.checked | default((item.value == params.value and item.checked is not false) if params.value else false, true) %}
     {% set hasHint = true if item.hint and (item.hint.text or item.hint.html) %}
     {% set itemHintId = itemId ~ '-item-hint' %}
     <div class="govuk-radios__item">

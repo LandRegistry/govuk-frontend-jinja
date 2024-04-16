@@ -75,10 +75,10 @@
       } %}
 
       {#- Output ` name` only (no value) for boolean attributes -#}
-      {% if options.optional == true and options.value == true %}
+      {% if options.optional is true and options.value is true %}
         {% set attributesHtml = attributesHtml ~ " " ~ name | escape %}
       {#- Skip optional empty attributes or output ` name="value"` pair by default -#}
-      {% elif (options.optional == true and not [undefined, null, false].includes(options.value)) or options.optional is not true %}
+      {% elif (options.optional is true and not [undefined, null, false].includes(options.value)) or options.optional != true %}
         {% set attributesHtml = attributesHtml ~ " " ~ name | escape ~ '="' ~ options.value | escape ~ '"' %}
       {% endif %}
     {% endfor %}
