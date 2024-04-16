@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "govuk-frontend-jinja",
+  "version": "0.0.0",
+  "author": "Matt Shaw",
+  "license": "MIT",
+  "devDependencies": {
+    "govuk-frontend": "^5.1.0"
+  }
+}

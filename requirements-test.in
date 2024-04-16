@@ -1,2 +1,5 @@
 flake8
 flask
+pytest
+lxml
+xmldiff
