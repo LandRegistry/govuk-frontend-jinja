@@ -59,7 +59,7 @@
     'spellcheck': params.spellcheck,
     'value': params.value,
     'formGroup': params.formGroup,
-    'classes': 'govuk-js-character-count' ~ (' ' ~ params.classes if params.classes else ''),
+    'classes': 'govuk-js-character-count' ~ (' ' ~ params.classes if params.classes else ""),
     'label': {
       'html': params.label.html,
       'text': params.label.text,
@@ -83,7 +83,7 @@
   {{ govukHint({
     'text': ((textareaDescriptionText) | replace('%{count}', textareaDescriptionLength) if not hasNoLimit),
     'id': params.id ~ '-info',
-    'classes': 'govuk-character-count__message' ~ (' ' ~ params.countMessage.classes if params.countMessage and params.countMessage.classes else '')
+    'classes': 'govuk-character-count__message' ~ (' ' ~ params.countMessage.classes if params.countMessage and params.countMessage.classes else "")
   }) | trim | indent(2) }}
 </div>
 {% endmacro %}

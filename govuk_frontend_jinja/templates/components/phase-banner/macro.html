@@ -9,7 +9,7 @@
     {{ govukTag({
       'text': params.tag.text if params.tag and params.tag.text,
       'html': params.tag.html if params.tag and params.tag.html,
-      'classes': "govuk-phase-banner__content__tag" ~ (" " ~ params.tag.classes if params.tag and params.tag.classes else '')
+      'classes': "govuk-phase-banner__content__tag" ~ (" " ~ params.tag.classes if params.tag and params.tag.classes else "")
     }) | trim | indent(4) }}
     <span class="govuk-phase-banner__text">
       {{ params.html | safe | trim | indent(6) if params.html else params.text }}
