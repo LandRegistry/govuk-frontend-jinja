@@ -24,7 +24,10 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: Install Node dependencies
+      run: |
+        npm ci
+    - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
         python -m pip install flake8 safety
@@ -37,14 +40,6 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
-    - name: Prepare to test
+    - name: Test with pytest
       run: |
-        sudo apt-get install wait-for-it
-        curl -L https://github.com/matthew-shaw/govuk-frontend-diff/releases/download/v2.0.0/govuk-frontend-diff-linux --output govuk-frontend-diff
-        chmod +x govuk-frontend-diff
-    - name: Test with govuk-frontend-diff
-      run: |
-        (cd tests/utils && nohup python -m flask run --port 3000 &)
-        wait-for-it localhost:3000
-        ./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v5.1.0 --exclude page-template --ci
-
+        pytest
