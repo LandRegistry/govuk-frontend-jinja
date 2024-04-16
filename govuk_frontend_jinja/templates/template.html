@@ -1,3 +1,4 @@
+{% from "govuk_frontend_jinja/macros/attributes.html" import govukAttributes %}
 {% from "govuk_frontend_jinja/components/skip-link/macro.html" import govukSkipLink -%}
 {% from "govuk_frontend_jinja/components/header/macro.html" import govukHeader -%}
 {% from "govuk_frontend_jinja/components/footer/macro.html" import govukFooter -%}
@@ -21,10 +22,10 @@
 
     {#- OpenGraph images needs to be absolute, so we need either a URL for the image or for assetUrl to be set #}
     {% if opengraphImageUrl or assetUrl %}
-    <meta property="og:image" content="{{ opengraphImageUrl | default(assetUrl + '/images/govuk-opengraph-image.png', true) }}">
+    <meta property="og:image" content="{{ opengraphImageUrl | default(assetUrl ~ '/images/govuk-opengraph-image.png', true) }}">
     {% endif %}
   </head>
-  <body class="govuk-template__body {%- if bodyClasses %} {{ bodyClasses }}{% endif %}" {%- for attribute, value in bodyAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <body class="govuk-template__body {%- if bodyClasses %} {{ bodyClasses }}{% endif %}" {{- govukAttributes(bodyAttributes) }}>
     <script {%- if cspNonce %} nonce="{{ cspNonce }}"{% endif %}>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
     {% block bodyStart %}{% endblock %}
 

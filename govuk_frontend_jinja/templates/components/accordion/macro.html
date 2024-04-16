@@ -1,4 +1,5 @@
 {% macro govukAccordion(params) %}
+{% from "govuk_frontend_jinja/macros/attributes.html" import govukAttributes %}
 {% from "govuk_frontend_jinja/macros/i18n.html" import govukI18nAttributes %}
 
 {%- macro _accordionItem(params, item, index) %}
@@ -60,7 +61,7 @@
   }) -}}
 
   {%- if params.rememberExpanded is not undefined %} data-remember-expanded="{{ params.rememberExpanded | escape | lower }}"{% endif %}
-  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {{- govukAttributes(params.attributes) }}>
   {% for item in params['items'] %}
     {% if item %}{{ _accordionItem(params, item, loop.index) }}{% endif %}
   {% endfor %}
