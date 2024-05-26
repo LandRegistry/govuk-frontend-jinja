@@ -67,7 +67,7 @@
     </dd>
     {% if row.actions and row.actions['items'] | length %}
     <dd class="govuk-summary-list__actions {%- if row.actions.classes %} {{ row.actions.classes }}{% endif %}">
-      {% if row.actions['items'] | length == 1 %}
+      {% if row.actions and row.actions['items'] | length == 1 %}
         {{- _actionLink(row.actions['items'][0], params.card.title if params.card) | trim | indent(6, true) }}
       {% else %}
       <ul class="govuk-summary-list__actions-list">

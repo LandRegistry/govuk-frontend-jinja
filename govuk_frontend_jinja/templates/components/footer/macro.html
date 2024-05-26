@@ -1,7 +1,7 @@
 {% macro govukFooter(params) %}
 {% from "govuk_frontend_jinja/macros/attributes.html" import govukAttributes -%}
 
-<footer class="govuk-footer {%- if params.classes %} {{ params.classes }}{% endif %}" role="contentinfo"
+<footer class="govuk-footer {%- if params.classes %} {{ params.classes }}{% endif %}"
   {{- govukAttributes(params.attributes) }}>
   <div class="govuk-width-container {%- if params.containerClasses %} {{ params.containerClasses }}{% endif %}">
     {% if params.navigation | length %}
@@ -86,7 +86,7 @@
           class="govuk-footer__link govuk-footer__copyright-logo"
           href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
         >
-        {%- if params.copyright and (params.copyright.html or params.copyright.text) -%}
+        {% if params.copyright and (params.copyright.html or params.copyright.text) %}
           {{ params.copyright.html | safe | trim | indent(10) if params.copyright.html else params.copyright.text }}
         {% else %}
           © Crown copyright

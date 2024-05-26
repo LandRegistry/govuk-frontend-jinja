@@ -40,8 +40,8 @@
     'visuallyHiddenText': params.errorMessage.visuallyHiddenText
   }) | trim | indent(2) }}
 {% endif %}
-{% if params.formGroup and  params.formGroup.beforeInput %}
-  {{ params.formGroup.beforeInput.html | safe | trim | indent(2) if params.formGroup and  params.formGroup.beforeInput.html else params.formGroup.beforeInput.text }}
+{% if params.formGroup and params.formGroup.beforeInput %}
+  {{ params.formGroup.beforeInput.html | safe | trim | indent(2) if params.formGroup and params.formGroup.beforeInput.html else params.formGroup.beforeInput.text }}
 {% endif %}
   <select class="govuk-select
     {%- if params.classes %} {{ params.classes }}{% endif %}{%- if params.errorMessage %} govuk-select--error{% endif %}" id="{{ params.id }}" name="{{ params.name }}"
@@ -50,7 +50,7 @@
     {{- govukAttributes(params.attributes) }}>
     {% if 'items' in params and params['items'] | length %}
       {% for item in params['items'] %}
-        {% if item %}
+      {% if item %}
         {#- Allow selecting by text content (the value for an option when no value attribute is specified) #}
         {%- set effectiveValue = item.value | default(item.text) %}
         <option {%- if item.value is not undefined %} value="{{ item.value | lower }}"{% endif %}
@@ -59,9 +59,9 @@
           {{- govukAttributes(item.attributes) }}>
           {{- item.text -}}
         </option>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
   </select>
 {% if params.formGroup and params.formGroup.afterInput %}
   {{ params.formGroup.afterInput.html | safe | trim | indent(2) if params.formGroup and params.formGroup.afterInput.html else params.formGroup.afterInput.text }}

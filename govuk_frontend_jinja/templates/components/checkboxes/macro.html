@@ -62,7 +62,7 @@
     </div>
     {% if item.conditional and item.conditional.html %}
     <div class="govuk-checkboxes__conditional {%- if not isChecked %} govuk-checkboxes__conditional--hidden{% endif %}" id="{{ conditionalId }}">
-      {{ item.conditional.html | safe | trim | indent(6) }}
+      {{ item.conditional.html | safe | trim }}
     </div>
     {% endif %}
   {% endif %}
@@ -96,7 +96,7 @@
   <div class="govuk-checkboxes {%- if params.classes %} {{ params.classes }}{% endif %}"
     {{- govukAttributes(params.attributes) }} data-module="govuk-checkboxes">
     {% if params.formGroup and params.formGroup.beforeInputs %}
-    {{ params.formGroup.beforeInputs.html | safe | trim | indent(4) if params.formGroup.beforeInputs.html else params.formGroup.beforeInputs.text }}
+    {{ params.formGroup.beforeInputs.html | safe | trim | indent(4) if params.formGroup and params.formGroup.beforeInputs.html else params.formGroup.beforeInputs.text }}
     {% endif %}
     {% for item in params['items'] %}
       {% if item %}
@@ -104,7 +104,7 @@
       {% endif %}
     {% endfor %}
     {% if params.formGroup and params.formGroup.afterInputs %}
-    {{ params.formGroup.afterInputs.html | safe | trim | indent(4) if params.formGroup.afterInputs.html else params.formGroup.afterInputs.text }}
+    {{ params.formGroup.afterInputs.html | safe | trim | indent(4) if params.formGroup and params.formGroup.afterInputs.html else params.formGroup.afterInputs.text }}
     {% endif %}
   </div>
 {% endset -%}
