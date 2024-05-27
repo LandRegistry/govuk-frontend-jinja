@@ -70,7 +70,7 @@
     {% for name, value in (attributes.items() if attributes else {}.items()) %}
     {#- Detect if this is a `safe` filtered value. Just pass the value through if so. -#}
       {#- https://github.com/alphagov/govuk-frontend/issues/4937 -#}
-      {% if value is mapping and not [undefined, null].includes(value.val) and value | length %}
+      {% if value is mapping and value.val not in [undefined, null] and value | length %}
         {% set value = value.val %}
       {% endif %}
 
