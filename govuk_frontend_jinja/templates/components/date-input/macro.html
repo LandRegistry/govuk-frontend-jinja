@@ -7,8 +7,8 @@
 
 {#- a record of other elements that we need to associate with the input using
   aria-describedby – for example hints or error messages -#}
-{% set ns = namespace() %}
-{% set ns.describedBy = params.fieldset.describedBy if params.fieldset and params.fieldset.describedBy else "" %}
+  {% set ns = namespace() %}
+  {% set ns.describedBy = params.fieldset.describedBy if params.fieldset and params.fieldset.describedBy else "" %}
 
 {#- fieldset is false by default -#}
 {% set hasFieldset = true if params.fieldset else false %}
@@ -61,7 +61,7 @@
     {{- govukAttributes(params.attributes) -}}
     {%- if params.id %} id="{{ params.id }}"{% endif %}>
     {% if params.formGroup and params.formGroup.beforeInputs %}
-    {{ params.formGroup.beforeInputs.html | safe | trim | indent(4) if params.formGroup.beforeInputs.html else params.formGroup.beforeInputs.text }}
+    {{ params.formGroup.beforeInputs.html | safe | trim | indent(4) if params.formGroup and params.formGroup.beforeInputs.html else params.formGroup.beforeInputs.text }}
     {% endif %}
     {% for item in dateInputItems %}
     <div class="govuk-date-input__item">
@@ -83,7 +83,7 @@
     </div>
     {% endfor %}
     {% if params.formGroup and params.formGroup.afterInputs %}
-    {{ params.formGroup.afterInputs.html | safe | trim | indent(4) if params.formGroup.afterInputs.html else params.formGroup.afterInputs.text }}
+    {{ params.formGroup.afterInputs.html | safe | trim | indent(4) if params.formGroup and params.formGroup.afterInputs.html else params.formGroup.afterInputs.text }}
     {% endif %}
   </div>
 {% endset -%}
