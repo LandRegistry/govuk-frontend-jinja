@@ -52,7 +52,7 @@ def component(component: str) -> str:
     # Returns an html response that is just the template in question - no wrapping <html>, <body> elements etc
     return render_template_string(
         """
-        {{% from "govuk_frontend_jinja/components/" + component + "/macro.html" import govuk{macro_name} %}}
+        {{% from "govuk_frontend_jinja/components/" ~ component ~ "/macro.html" import govuk{macro_name} %}}
         {{{{ govuk{macro_name}(params) }}}}
     """.format(
             macro_name=data["macro_name"]

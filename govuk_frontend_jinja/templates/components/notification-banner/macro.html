@@ -1,10 +1,12 @@
 {% macro govukNotificationBanner(params) %}
+{% from "govuk_frontend_jinja/macros/attributes.html" import govukAttributes %}
+
 {%- if params.type == "success" %}
-  {% set successBanner = True %}
+  {% set successBanner = true %}
 {% endif %}
 
 {%- if successBanner %}
-  {% set typeClass = "govuk-notification-banner--" + params.type %}
+  {% set typeClass = "govuk-notification-banner--" ~ params.type %}
 {% endif %}
 
 {%- if params.role %}
@@ -29,19 +31,21 @@
 
 <div class="govuk-notification-banner {%- if typeClass %} {{ typeClass }}{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}" role="{{ role }}" aria-labelledby="{{ params.titleId | default("govuk-notification-banner-title", true) }}" data-module="govuk-notification-banner"
   {%- if params.disableAutoFocus is not undefined %} data-disable-auto-focus="{{ params.disableAutoFocus | lower }}"{% endif %}
-  {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {{- govukAttributes(params.attributes) }}>
   <div class="govuk-notification-banner__header">
     <h{{ params.titleHeadingLevel | default(2, true) }} class="govuk-notification-banner__title" id="{{ params.titleId | default("govuk-notification-banner-title", true) }}">
       {{ title }}
     </h{{ params.titleHeadingLevel | default(2, true) }}>
   </div>
   <div class="govuk-notification-banner__content">
-    {%- if caller or params.html -%}
-      {{ caller() if caller else params.html | safe }}
-    {%- elif params.text -%}
-      {# Set default style for single line content #}
-      <p class="govuk-notification-banner__heading">{{ params.text }}</p>
-    {%- endif -%}
+  {% if caller or params.html %}
+    {{ caller() if caller else params.html | safe | trim | indent(4) }}
+  {% elif params.text %}
+    {# Set default style for single line content -#}
+    <p class="govuk-notification-banner__heading">
+      {{ params.text | trim | indent(6) }}
+    </p>
+  {% endif %}
   </div>
 </div>
 {% endmacro %}
