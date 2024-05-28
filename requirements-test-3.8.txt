@@ -30,5 +30,5 @@ pyflakes==3.2.0
     # via flake8
 werkzeug==3.0.3
     # via flask
-zipp==3.18.2
+zipp==3.19.0
     # via importlib-metadata
