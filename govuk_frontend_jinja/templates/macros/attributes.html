@@ -76,7 +76,7 @@
 
       {#- Set default attribute options -#}
       {% set options = value if value is mapping else {
-        'value': value,
+        'value': value if value is string else value | lower,
         'optional': false
       } %}
 
