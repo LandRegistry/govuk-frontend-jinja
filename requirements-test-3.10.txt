@@ -8,7 +8,7 @@ blinker==1.8.2
     # via flask
 click==8.1.7
     # via flask
-flake8==7.0.0
+flake8==7.1.1
     # via -r requirements-test.in
 flask==3.0.3
     # via -r requirements-test.in
@@ -22,9 +22,9 @@ markupsafe==2.1.5
     #   werkzeug
 mccabe==0.7.0
     # via flake8
-pycodestyle==2.11.1
+pycodestyle==2.12.1
     # via flake8
 pyflakes==3.2.0
     # via flake8
-werkzeug==3.0.3
+werkzeug==3.0.4
     # via flask
