@@ -11,6 +11,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - [GOV.UK Frontend v5.7.1](https://github.com/alphagov/govuk-frontend/releases/tag/v5.7.1) support
+- Python 3.13 support
+
+### Removed
+
+- Python 3.8 support
 
 ## [3.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.3.0) - 29/08/2024
 
