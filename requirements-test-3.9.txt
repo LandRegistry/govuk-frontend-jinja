@@ -12,13 +12,13 @@ flake8==7.1.1
     # via -r requirements-test.in
 flask==3.0.3
     # via -r requirements-test.in
-importlib-metadata==8.4.0
+importlib-metadata==8.5.0
     # via flask
 itsdangerous==2.2.0
     # via flask
 jinja2==3.1.4
     # via flask
-markupsafe==2.1.5
+markupsafe==3.0.1
     # via
     #   jinja2
     #   werkzeug
@@ -30,5 +30,5 @@ pyflakes==3.2.0
     # via flake8
 werkzeug==3.0.4
     # via flask
-zipp==3.20.1
+zipp==3.20.2
     # via importlib-metadata
