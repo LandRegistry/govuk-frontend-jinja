@@ -1,7 +1,7 @@
 # GOV.UK Frontend Jinja Macros
 
 [![PyPI version](https://badge.fury.io/py/govuk-frontend-jinja.svg)](https://pypi.org/project/govuk-frontend-jinja/)
-![govuk-frontend 5.6.0](https://img.shields.io/badge/govuk--frontend%20version-5.6.0-005EA5?logo=gov.uk&style=flat)
+![govuk-frontend 5.7.1](https://img.shields.io/badge/govuk--frontend%20version-5.7.1-005EA5?logo=gov.uk&style=flat)
 [![Python package](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml/badge.svg)](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml)
 
 **GOV.UK Frontend Jinja is a [community tool](https://design-system.service.gov.uk/community/resources-and-tools/) of the [GOV.UK Design System](https://design-system.service.gov.uk/). The Design System team is not responsible for it and cannot support you with using it. Contact the [maintainers](#contributors) directly if you need [help](#support) or you want to request a feature.**
@@ -14,29 +14,30 @@ If you are looking to build a fully featured Flask app that integrates with [GOV
 
 The following table shows the version of GOV.UK Frontend Jinja that you should use for your targeted version of GOV.UK Frontend:
 
-| GOV.UK Frontend Jinja Version | Target GOV.UK Frontend Version |
-| ----------------------------- | ------------------------------ |
-| [3.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.3.0) | [5.6.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.6.0) |
-| [3.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.2.0) | [5.5.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.5.0) |
-| [3.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.1.0) | [5.4.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.4.0) |
-| [3.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.0.0) | [5.1.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.1.0) |
-| [2.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.8.0) | [4.8.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.8.0) |
-| [2.7.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.7.0) | [4.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.7.0) |
-| [2.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.6.0) | [4.6.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.6.0) |
-| [2.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.5.0) | [4.5.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.5.0) |
-| [2.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.4.0) | [4.4.1](https://github.com/alphagov/govuk-frontend/releases/tag/v4.4.1) |
-| [2.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.3.0) | [4.2.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.2.0) |
-| [2.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.2.0) | [4.1.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.1.0) |
-| [2.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.1.0) | [4.0.1](https://github.com/alphagov/govuk-frontend/releases/tag/v4.0.1) |
-| [2.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.0.0) | [4.0.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.0.0) |
+| GOV.UK Frontend Jinja Version                                                    | Target GOV.UK Frontend Version                                            |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [3.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.4.0) | [5.7.1](https://github.com/alphagov/govuk-frontend/releases/tag/v5.7.1)   |
+| [3.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.3.0) | [5.6.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.6.0)   |
+| [3.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.2.0) | [5.5.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.5.0)   |
+| [3.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.1.0) | [5.4.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.4.0)   |
+| [3.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.0.0) | [5.1.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.1.0)   |
+| [2.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.8.0) | [4.8.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.8.0)   |
+| [2.7.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.7.0) | [4.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.7.0)   |
+| [2.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.6.0) | [4.6.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.6.0)   |
+| [2.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.5.0) | [4.5.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.5.0)   |
+| [2.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.4.0) | [4.4.1](https://github.com/alphagov/govuk-frontend/releases/tag/v4.4.1)   |
+| [2.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.3.0) | [4.2.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.2.0)   |
+| [2.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.2.0) | [4.1.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.1.0)   |
+| [2.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.1.0) | [4.0.1](https://github.com/alphagov/govuk-frontend/releases/tag/v4.0.1)   |
+| [2.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/2.0.0) | [4.0.0](https://github.com/alphagov/govuk-frontend/releases/tag/v4.0.0)   |
 | [1.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.6.0) | [3.15.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.15.0) |
 | [1.5.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.5.1) | [3.14.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.14.0) |
 | [1.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.4.0) | [3.13.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.13.0) |
 | [1.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.3.0) | [3.12.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.12.0) |
 | [1.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.2.1) | [3.11.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.11.0) |
 | [1.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.1.0) | [3.10.2](https://github.com/alphagov/govuk-frontend/releases/tag/v3.10.2) |
-| [1.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.0.0) | [3.8.1](https://github.com/alphagov/govuk-frontend/releases/tag/v3.8.1) |
-| [0.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.1) | [3.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.7.0) |
+| [1.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/1.0.0) | [3.8.1](https://github.com/alphagov/govuk-frontend/releases/tag/v3.8.1)   |
+| [0.2.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/0.2.1) | [3.7.0](https://github.com/alphagov/govuk-frontend/releases/tag/v3.7.0)   |
 
 Any other versions of GOV.UK Frontend not shown above _may_ still be compatible, but have not been specifically tested and verified.
 
@@ -64,10 +65,7 @@ To use a component in your project templates you must import and call the compon
 
 ```html
 {%- from 'govuk_frontend_jinja/components/button/macro.html' import govukButton -%}
-
-{{ govukButton({
-  'text': "Save and continue"
-}) }}
+{{ govukButton({ 'text': "Save and continue" }) }}
 ```
 
 The options available to each component macro can be found in the original [GOV.UK Design System Components](https://design-system.service.gov.uk/components/) documentation. Since this project is a like-for-like port, the only difference between the Nunjucks examples and their Jinja equivalents is having to quote key names, e.g. `'text'` instead of `text`.
