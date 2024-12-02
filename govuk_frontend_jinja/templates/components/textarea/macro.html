@@ -48,7 +48,7 @@
   {%- if params.disabled %} disabled{% endif %}
   {%- if describedBy %} aria-describedby="{{ describedBy }}"{% endif %}
   {%- if params.autocomplete %} autocomplete="{{ params.autocomplete }}"{% endif %}
-  {{- govukAttributes(params.attributes) }}>{{ params.value }}</textarea>
+  {{- govukAttributes(params.attributes) }}>{% if params.value %}{{ params.value }}{% endif %}</textarea>
 {% if params.formGroup and params.formGroup.afterInput %}
   {{ params.formGroup.afterInput.html | safe | trim | indent(2) if params.formGroup and params.formGroup.afterInput.html else params.formGroup.afterInput.text }}
 {% endif %}
