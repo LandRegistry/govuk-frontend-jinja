@@ -1,7 +1,7 @@
 # GOV.UK Frontend Jinja Macros
 
 [![PyPI version](https://badge.fury.io/py/govuk-frontend-jinja.svg)](https://pypi.org/project/govuk-frontend-jinja/)
-![govuk-frontend 5.7.1](https://img.shields.io/badge/govuk--frontend%20version-5.7.1-005EA5?logo=gov.uk&style=flat)
+![govuk-frontend 5.8.0](https://img.shields.io/badge/govuk--frontend%20version-5.8.0-005EA5?logo=gov.uk&style=flat)
 [![Python package](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml/badge.svg)](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml)
 
 **GOV.UK Frontend Jinja is a [community tool](https://design-system.service.gov.uk/community/resources-and-tools/) of the [GOV.UK Design System](https://design-system.service.gov.uk/). The Design System team is not responsible for it and cannot support you with using it. Contact the [maintainers](#contributors) directly if you need [help](#support) or you want to request a feature.**
@@ -16,6 +16,7 @@ The following table shows the version of GOV.UK Frontend Jinja that you should u
 
 | GOV.UK Frontend Jinja Version                                                    | Target GOV.UK Frontend Version                                            |
 | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [3.4.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.4.1) | [5.8.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.8.0)   |
 | [3.4.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.4.0) | [5.7.1](https://github.com/alphagov/govuk-frontend/releases/tag/v5.7.1)   |
 | [3.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.3.0) | [5.6.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.6.0)   |
 | [3.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.2.0) | [5.5.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.5.0)   |
@@ -64,8 +65,8 @@ app.jinja_loader = ChoiceLoader(
 To use a component in your project templates you must import and call the component macro and pass the relevant options, for example:
 
 ```html
-{%- from 'govuk_frontend_jinja/components/button/macro.html' import govukButton -%}
-{{ govukButton({ 'text': "Save and continue" }) }}
+{%- from 'govuk_frontend_jinja/components/button/macro.html' import govukButton
+-%} {{ govukButton({ 'text': "Save and continue" }) }}
 ```
 
 The options available to each component macro can be found in the original [GOV.UK Design System Components](https://design-system.service.gov.uk/components/) documentation. Since this project is a like-for-like port, the only difference between the Nunjucks examples and their Jinja equivalents is having to quote key names, e.g. `'text'` instead of `text`.

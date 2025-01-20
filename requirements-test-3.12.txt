@@ -4,19 +4,19 @@
 #
 #    pip-compile --output-file=requirements-test-3.12.txt requirements-test.in
 #
-blinker==1.8.2
+blinker==1.9.0
     # via flask
-click==8.1.7
+click==8.1.8
     # via flask
 flake8==7.1.1
     # via -r requirements-test.in
-flask==3.0.3
+flask==3.1.0
     # via -r requirements-test.in
 itsdangerous==2.2.0
     # via flask
-jinja2==3.1.4
+jinja2==3.1.5
     # via flask
-markupsafe==3.0.1
+markupsafe==3.0.2
     # via
     #   jinja2
     #   werkzeug
@@ -26,5 +26,5 @@ pycodestyle==2.12.1
     # via flake8
 pyflakes==3.2.0
     # via flake8
-werkzeug==3.0.4
+werkzeug==3.1.3
     # via flask
