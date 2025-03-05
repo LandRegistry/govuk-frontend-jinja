@@ -8,11 +8,11 @@ blinker==1.9.0
     # via flask
 click==8.1.8
     # via flask
-flake8==7.1.1
+flake8==7.1.2
     # via -r requirements-test.in
 flask==3.1.0
     # via -r requirements-test.in
-importlib-metadata==8.5.0
+importlib-metadata==8.6.1
     # via flask
 itsdangerous==2.2.0
     # via flask
