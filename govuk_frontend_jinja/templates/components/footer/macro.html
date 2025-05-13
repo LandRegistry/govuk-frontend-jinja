@@ -1,9 +1,19 @@
 {% macro govukFooter(params) %}
 {% from "govuk_frontend_jinja/macros/attributes.html" import govukAttributes -%}
+{% from "govuk_frontend_jinja/macros/logo.html" import govukLogo -%}
+
+{%- set _rebrand = params.rebrand | default(govukRebrand() if govukRebrand and govukRebrand is callable else govukRebrand) -%}
 
 <footer class="govuk-footer {%- if params.classes %} {{ params.classes }}{% endif %}"
   {{- govukAttributes(params.attributes) }}>
   <div class="govuk-width-container {%- if params.containerClasses %} {{ params.containerClasses }}{% endif %}">
+    {% if _rebrand %}
+      {{- govukLogo({
+        'classes': 'govuk-footer__crown',
+        'rebrand': true,
+        'useLogotype': false
+      }) }}
+    {% endif %}
     {% if params.navigation | length %}
       <div class="govuk-footer__navigation">
         {% for nav in params.navigation %}
