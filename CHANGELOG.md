@@ -4,7 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/3.5.0...main)
+## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/3.6.0...main)
+
+## [3.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.6.0) - 14/05/2025
+
+### Added
+
+- Added support for [GOV.UK Frontend v5.10.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.10.0).
+- Introduced rebranding logic in `header`, `footer`, and `service-navigation` components.
+- Added a new `logo.html` macro for enhanced branding capabilities.
+- Updated `template.html` to handle rebranding dynamically through variables.
+
+### Updated
+
+- Upgraded dependencies in `requirements-test-*.txt` files to the latest minor/patch versions:
+  - `click` → v8.2.0
+  - `flake8` → v7.2.0
+  - `jinja2` → v3.1.6
+  - `pycodestyle` → v2.13.0
+  - `pyflakes` → v3.3.2
+- Updated `README.md` badges to reflect the latest project state.
+
+### Removed
+
+- Deprecated legacy crown logos in favor of the Tudor Crown.
+
+### Fixed
+
+- Improved attribute handling in `service-navigation` and other components.
 
 ## [3.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.5.0) - 05/03/2025
 
