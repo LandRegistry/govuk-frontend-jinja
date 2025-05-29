@@ -104,7 +104,7 @@
   'formGroup': {
     'classes': 'govuk-character-count' ~ (' ' ~ params.formGroup.classes if params.formGroup and params.formGroup.classes),
     'attributes': attributesHtml,
-    'beforeInput': params.formGroup.beforeInput if params.fromGroup,
+    'beforeInput': params.formGroup.beforeInput if params.formGroup,
     'afterInput': {
       'html': countMessageHtml
     }
