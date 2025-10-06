@@ -32,11 +32,10 @@ setuptools.setup(
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3.13",
-        "Programming Language :: Python :: 3.9",
         "Topic :: Software Development :: Code Generators",
         "Topic :: Software Development :: User Interfaces",
         "Topic :: Text Processing :: Markup :: HTML",
     ],
-    python_requires=">=3.9",
+    python_requires=">=3.10",
     install_requires=["jinja2!=3.0.0,!=3.0.1"],
 )

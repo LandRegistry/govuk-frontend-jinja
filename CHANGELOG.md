@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/3.7.0...main)
 
+## [3.7.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.7.0) - 14/08/2025
+
+### Added
+
+- Added support for [GOV.UK Frontend v5.12.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.12.0)
+
+### Fixed
+
+- [#82](https://github.com/LandRegistry/govuk-frontend-jinja/issues/82)
+
+Thanks to [Tim South](https://github.com/tim-s-ccs)
+
 ## [3.7.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.7.0) - 14/08/2025
 
 ### Added
