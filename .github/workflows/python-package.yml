@@ -27,9 +27,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install flake8 pip-audit
-          pip install -r requirements-test-${{ matrix.python-version }}.txt
+          pip install -r requirements-test.txt
       - name: Check dependencies for known security vulnerabilities
-        run: pip-audit -r requirements-test-${{ matrix.python-version }}.txt
+        run: pip-audit -r requirements-test.txt
       - name: Lint with flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
