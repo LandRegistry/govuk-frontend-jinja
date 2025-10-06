@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/3.8.0...main)
 
-## [3.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.8.0) - xx/xx/2025
+## [3.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.8.0) - xx/10/2025
 
 ### Added
 
@@ -18,9 +18,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Fixed
 
-- [#82](https://github.com/LandRegistry/govuk-frontend-jinja/issues/82)
+- [#82](https://github.com/LandRegistry/govuk-frontend-jinja/issues/82) - Templates use lower filter on values where it should not
 
-Thanks to [Tim South](https://github.com/tim-s-ccs)
+Thanks to [Tim South](https://github.com/tim-s-ccs) and [Samuel Williams](https://github.com/samuelhwilliams)
 
 ## [3.7.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.7.0) - 14/08/2025
 
