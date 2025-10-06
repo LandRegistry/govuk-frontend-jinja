@@ -55,7 +55,7 @@
         {% if item %}
         {#- Allow selecting by text content (the value for an option when no value attribute is specified) #}
         {%- set effectiveValue = item.value | default(item.text) %}
-        <option {%- if item.value is not undefined %} value="{% if item.value in [True, False] %}{{ item.value | lower }}{% else %}{{ item.value }}{% endif %}"{% endif %}
+        <option {%- if item.value is not undefined %} value="{{ item.value | string | lower if item.value is boolean else item.value }}"{% endif %}
           {{-" selected" if item.selected | default((effectiveValue == params.value and item.selected is not false) if params.value else false, true) }}
           {{-" disabled" if item.disabled }}
           {{- govukAttributes(item.attributes) }}>
