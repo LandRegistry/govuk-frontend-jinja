@@ -3,7 +3,7 @@
 ![PyPI - Version](https://img.shields.io/pypi/v/govuk-frontend-jinja)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/govuk-frontend-jinja)
 ![PyPI - License](https://img.shields.io/pypi/l/govuk-frontend-jinja)
-![Static Badge](https://img.shields.io/badge/GOV.UK%20Frontend-v5.11.1-blue)
+![Static Badge](https://img.shields.io/badge/GOV.UK%20Frontend-v5.12.0-blue)
 [![Python package](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml/badge.svg)](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-package.yml)
 
 **GOV.UK Frontend Jinja is a [community tool](https://design-system.service.gov.uk/community/resources-and-tools/) of the [GOV.UK Design System](https://design-system.service.gov.uk/). The Design System team is not responsible for it and cannot support you with using it. Contact the [maintainers](#contributors) directly if you need [help](#support) or you want to request a feature.**
@@ -18,6 +18,7 @@ The following table shows the version of GOV.UK Frontend Jinja that you should u
 
 | GOV.UK Frontend Jinja Version                                                    | Target GOV.UK Frontend Version                                            |
 | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [3.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.8.0) | [5.12.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.12.0) |
 | [3.7.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.7.0) | [5.11.1](https://github.com/alphagov/govuk-frontend/releases/tag/v5.11.1) |
 | [3.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.6.0) | [5.10.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.10.0) |
 | [3.5.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.5.0) | [5.9.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.9.0)   |
