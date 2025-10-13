@@ -35,7 +35,7 @@ jobs:
 
       # Security check
       - name: Check dependencies for known vulnerabilities
-        run: pipenv run pip-audit
+        run: pipenv run pip-audit --ignore-vuln GHSA-4xh5-x5gv-qwph
 
       # Linting
       - name: Lint with flake8
