@@ -47,7 +47,6 @@ Homepage = "https://github.com/LandRegistry/govuk-frontend-jinja"
 Issues = "https://github.com/LandRegistry/govuk-frontend-jinja/issues"
 Changelog = "https://github.com/LandRegistry/govuk-frontend-jinja/blob/main/CHANGELOG.md"
 
-
 [tool.setuptools.packages.find]
 exclude = ["tests"]
 
