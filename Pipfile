@@ -12,6 +12,3 @@ flake8 = "*"
 flask = "*"
 pip-audit = "*"
 twine = "*"
-
-[requires]
-python_version = "3.14"
