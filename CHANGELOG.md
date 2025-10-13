@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Migrated from `setup.py` to `pyproject.toml` for packaging config
 - Migrated from `pip-tools` to `pipenv` for dependency management
+- Reduced test Docker image size from 1.28GB to 400MB (-69.5%)
 
 ## [3.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.8.0) - 06/10/2025
 
