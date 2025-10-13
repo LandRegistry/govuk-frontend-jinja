@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jinja2 = "!=3.0.0,!=3.0.1"
+
+[dev-packages]
+build = "*"
+flake8 = "*"
+flask = "*"
+pip-audit = "*"
+twine = "*"
+
+[requires]
+python_version = "3.14"

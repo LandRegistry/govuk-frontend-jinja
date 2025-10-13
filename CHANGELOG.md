@@ -13,6 +13,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Added support for [GOV.UK Frontend v5.13.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.13.0)
 - Python 3.14 support
 
+### Changed
+
+- Migrated from `setup.py` to `pyproject.toml` for packaging config
+
 ## [3.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.8.0) - 06/10/2025
 
 ### Added
@@ -44,7 +48,7 @@ Thanks to [Tim South](https://github.com/tim-s-ccs) and [Samuel Williams](https:
 - Added a new `logo.html` macro for enhanced branding capabilities.
 - Updated `template.html` to handle rebranding dynamically through variables.
 
-### Updated
+### Changed
 
 - Upgraded dependencies in `requirements-test-*.txt` files to the latest minor/patch versions:
   - `click` → v8.2.0
