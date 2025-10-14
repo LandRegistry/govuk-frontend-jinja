@@ -9,6 +9,7 @@ jinja2 = "!=3.0.0,!=3.0.1"
 [dev-packages]
 build = "*"
 flake8 = "*"
+flake8-pyproject = "*"
 flask = "*"
 pip-audit = "*"
 twine = "*"
