@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "govuk-frontend-jinja"
+version = "3.9.0"
+dependencies = ["jinja2!=3.0.0,!=3.0.1"]
+requires-python = ">=3.10"
+authors = [
+    { name = "Matt Shaw", email = "matthew.shaw@landregistry.gov.uk" },
+    { name = "Andy Mantell" },
+]
+maintainers = [
+    { name = "Matt Shaw", email = "matthew.shaw@landregistry.gov.uk" },
+]
+description = "GOV.UK Frontend Jinja Macros"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = [
+    "component",
+    "design system",
+    "frontend",
+    "govuk-frontend",
+    "govuk",
+    "jinja",
+    "macros",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Software Development :: User Interfaces",
+    "Topic :: Text Processing :: Markup :: HTML",
+]
+
+[project.urls]
+Homepage = "https://github.com/LandRegistry/govuk-frontend-jinja"
+Issues = "https://github.com/LandRegistry/govuk-frontend-jinja/issues"
+Changelog = "https://github.com/LandRegistry/govuk-frontend-jinja/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+exclude = ["tests"]
+
+[tool.setuptools.package-data]
+govuk_frontend_jinja = ["**/*.html"]
+
+# Optional: ensures setuptools includes all package data files declared above
+[tool.setuptools]
+include-package-data = true
+
+# ----------------------------
+# Developer tooling configs
+# ----------------------------
+
+[tool.flake8]
+exclude = ["venv"]
+ignore = ["E203", "W503"]
+max-complexity = 10
+max-line-length = 120
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 120

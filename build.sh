@@ -1,5 +1,2 @@
-pip install -U build twine
-rm -rf build
-rm -rf dist
-rm -rf govuk_frontend_jinja.egg-info
-python3 -m build
+rm -rf build dist govuk_frontend_jinja.egg-info
+pipenv run python -m build
