@@ -26,7 +26,8 @@
 {% endif -%}
 {% endset -%}
 
-{%- set attributesHtml %}
+{%- set ns = namespace() %}
+{%- set ns.attributesHtml %}
   {{- govukAttributes({
     "data-module": "govuk-character-count",
     "data-maxlength": {
@@ -89,8 +90,8 @@
 
 {#- Append form group attributes onto attributes set above #}
 {%- if params.formGroup -%}
-  {%- for name, value in params.formGroup.attributes if params.formGroup %}
-    {% set attributesHtml = attributesHtml ~ " " ~ name | escape ~ '="' ~ value | escape ~ '"' %}
+  {%- for name, value in (params.formGroup.attributes.items() if params.formGroup.attributes else {}.items()) %}
+    {% set ns.attributesHtml = '{} {}="{}"'.format(ns.attributesHtml, name | escape, value | escape) %}
   {% endfor -%}
 {%- endif -%}
 
@@ -103,7 +104,7 @@
   'value': params.value,
   'formGroup': {
     'classes': 'govuk-character-count' ~ (' ' ~ params.formGroup.classes if params.formGroup and params.formGroup.classes),
-    'attributes': attributesHtml,
+    'attributes': ns.attributesHtml,
     'beforeInput': params.formGroup.beforeInput if params.formGroup,
     'afterInput': {
       'html': countMessageHtml
