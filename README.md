@@ -18,7 +18,7 @@ The following table shows the version of GOV.UK Frontend Jinja that you should u
 
 | GOV.UK Frontend Jinja Version                                                    | Target GOV.UK Frontend Version                                            |
 | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [3.9.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.9.0) | [5.13.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.13.0) |
+| [3.9.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.9.1) | [5.13.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.13.0) |
 | [3.8.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.8.0) | [5.12.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.12.0) |
 | [3.7.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.7.0) | [5.11.1](https://github.com/alphagov/govuk-frontend/releases/tag/v5.11.1) |
 | [3.6.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.6.0) | [5.10.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.10.0) |

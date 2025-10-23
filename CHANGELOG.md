@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/3.9.0...main)
+## [Unreleased](https://github.com/LandRegistry/govuk-frontend-jinja/compare/3.9.1...main)
+
+## [3.9.1](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.9.1) - 23/10/2025
+
+### Fixed
+
+- [#96](https://github.com/LandRegistry/govuk-frontend-jinja/pull/96) - Character count macro options typo
+- [#105](https://github.com/LandRegistry/govuk-frontend-jinja/issues/105) - Character count attributes namespace
 
 ## [3.9.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.9.0) - 13/10/2025
 
