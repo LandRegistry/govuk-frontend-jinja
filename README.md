@@ -73,8 +73,10 @@ app.jinja_loader = ChoiceLoader(
 To use a component in your project templates you must import and call the component macro and pass the relevant options, for example:
 
 ```html
-{%- from 'govuk_frontend_jinja/components/button/macro.html' import govukButton
--%} {{ govukButton({ 'text': "Save and continue" }) }}
+{%- from 'govuk_frontend_jinja/components/button/macro.html' import govukButton -%}
+{{ govukButton({
+    'text': "Save and continue"
+}) }}
 ```
 
 The options available to each component macro can be found in the original [GOV.UK Design System Components](https://design-system.service.gov.uk/components/) documentation. Since this project is a like-for-like port, the only difference between the Nunjucks examples and their Jinja equivalents is having to quote key names, e.g. `'text'` instead of `text`.
