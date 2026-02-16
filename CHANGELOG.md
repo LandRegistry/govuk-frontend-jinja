@@ -12,6 +12,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Added support for [GOV.UK Frontend v6.0.0](https://github.com/alphagov/govuk-frontend/releases/tag/v6.0.0).
 
+### Removed
+
+- Removed support for GOV.UK Frontend Jinja v1.x.x releases and corresponding GOV.UK Frontend v3.x.x releases.
+
 ## [3.10.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.10.0) - 15/01/2026
 
 ### Added
