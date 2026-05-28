@@ -14,12 +14,12 @@ RUN curl -L https://github.com/matthew-shaw/govuk-frontend-diff/releases/downloa
     --output /usr/local/bin/govuk-frontend-diff && \
     chmod +x /usr/local/bin/govuk-frontend-diff
 
-# Copy Pipfile & Pipfile.lock first to leverage Docker cache
-COPY Pipfile Pipfile.lock ./
+# Copy pyproject and lockfile to leverage Docker cache
+COPY pyproject.toml uv.lock ./
 
-# Install pipenv and project dependencies directly into system Python
-RUN python -m pip install --upgrade pip pipenv && \
-    pipenv install --system --deploy --ignore-pipfile --dev
+# Install uv and project dependencies directly into system Python
+RUN python -m pip install --upgrade pip uv && \
+    uv sync --all-extras
 
 # Copy source code and tests
 COPY govuk_frontend_jinja govuk_frontend_jinja

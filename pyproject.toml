@@ -62,11 +62,20 @@ include-package-data = true
 # ----------------------------
 
 [tool.flake8]
-exclude = ["venv"]
+exclude = ["venv", ".venv"]
 ignore = ["E203", "W503"]
 max-complexity = 10
 max-line-length = 120
 
+[project.optional-dependencies]
+dev = [
+    "build",
+    "flake8",
+    "flake8-pyproject",
+    "flask",
+    "pip-audit",
+    "twine",
+]
 [tool.isort]
 profile = "black"
 multi_line_output = 3
