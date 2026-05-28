@@ -19,7 +19,7 @@ COPY pyproject.toml uv.lock ./
 
 # Install uv and project dependencies directly into system Python
 RUN python -m pip install --upgrade pip uv && \
-    uv sync --system-site-packages --all-extras
+    uv sync --all-extras
 
 # Copy source code and tests
 COPY govuk_frontend_jinja govuk_frontend_jinja
