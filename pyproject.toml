@@ -1,12 +1,12 @@
 [build-system]
-requires = ["setuptools >= 77.0.3"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.12.23,<0.13"]
+build-backend = "uv_build"
 
 [project]
 name = "govuk-frontend-jinja"
-version = "4.1.0"
+version = "4.2.0"
 dependencies = ["jinja2!=3.0.0,!=3.0.1"]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 authors = [
     { name = "Matt Shaw", email = "matthew.shaw@landregistry.gov.uk" },
     { name = "Andy Mantell" },
@@ -32,7 +32,6 @@ classifiers = [
     "Environment :: Web Environment",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -47,22 +46,23 @@ Homepage = "https://github.com/LandRegistry/govuk-frontend-jinja"
 Issues = "https://github.com/LandRegistry/govuk-frontend-jinja/issues"
 Changelog = "https://github.com/LandRegistry/govuk-frontend-jinja/blob/main/CHANGELOG.md"
 
-[tool.setuptools.packages.find]
-exclude = ["tests"]
+[dependency-groups]
+dev = [
+    "flake8",
+    "flake8-pyproject",
+    "flask",
+]
 
-[tool.setuptools.package-data]
-govuk_frontend_jinja = ["**/*.html"]
-
-# Optional: ensures setuptools includes all package data files declared above
-[tool.setuptools]
-include-package-data = true
+[tool.uv.build-backend]
+module-name = "govuk_frontend_jinja"
+module-root = ""
 
 # ----------------------------
 # Developer tooling configs
 # ----------------------------
 
 [tool.flake8]
-exclude = ["venv"]
+exclude = [".venv"]
 ignore = ["E203", "W503"]
 max-complexity = 10
 max-line-length = 120

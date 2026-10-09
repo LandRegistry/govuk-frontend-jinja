@@ -16,6 +16,12 @@ If you want to raise a bug report to help us improve, or a feature request to su
 
 ## Create a pull request
 
+### Python development setup
+
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/). The project pins its default Python version in `.python-version`; uv will install and select that version when needed.
+
+Run `uv sync` to install the project and development dependencies. Use `uv run` for project commands, for example `uv run flake8 .`, and `uv build` to create the package distributions.
+
 If you want to contribute code directly to the project in order to fix a bug or add a feature, then follow these guidelines:
 
 1. Check the [current issues](https://github.com/LandRegistry/govuk-frontend-jinja/issues) and [pull requests](https://github.com/LandRegistry/govuk-frontend-jinja/pulls) first to see if anyone else is already working on the same bug or feature. If they are, consider contributing to that existing issue or pull request first, rather than duplicating work.

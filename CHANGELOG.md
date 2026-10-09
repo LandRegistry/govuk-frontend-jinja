@@ -12,6 +12,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Added support for [GOV.UK Frontend v6.5.1](https://github.com/alphagov/govuk-frontend/releases/tag/v6.5.1).
 
+### Changed
+
+- Migrated project dependency management, package building, and Python version management to uv.
+- Updated the supported Python range to 3.11 through 3.14.
+
+### Removed
+
+- Python 3.10 support
+
 ## [4.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/4.1.0) - 15/07/2026
 
 ### Added

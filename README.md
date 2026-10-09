@@ -71,7 +71,7 @@ These versions are no longer supported as upstream GOV.UK Frontend support has e
 
 ## How to use
 
-After running `pip install govuk-frontend-jinja`, ensure that you tell Jinja where to load the templates from using the `PackageLoader` as follows:
+After adding the package with `uv add govuk-frontend-jinja`, ensure that you tell Jinja where to load the templates from using the `PackageLoader` as follows:
 
 ```python
 from flask import Flask
