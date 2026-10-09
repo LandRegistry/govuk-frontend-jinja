@@ -100,45 +100,9 @@ To use a component in your project templates you must import and call the compon
 
 The options available to each component macro can be found in the original [GOV.UK Design System Components](https://design-system.service.gov.uk/components/) documentation. Since this project is a like-for-like port, the only difference between the Nunjucks examples and their Jinja equivalents is having to quote key names, e.g. `'text'` instead of `text`.
 
-## Running the tests
+## Contributing
 
-The tests are run in a GitHub actions pipeline but if you want to run them locally you will need to install [govuk-frontend-diff](https://github.com/matthew-shaw/govuk-frontend-diff).
-
-There is a test server at `tests/utils/app.py` which you will need to run using the following command:
-
-```bash
-(cd tests/utils && python -m flask run --port 3000)
-```
-
-You can then run the tests using `govuk-frontend-diff` as follows:
-
-```bash
-./govuk-frontend-diff http://localhost:3000 --govuk-frontend-version=v4.8.0
-```
-
-This is all wrapped up in `./test.sh` for simplified running (Requires Docker).
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/LandRegistry/govuk-frontend-jinja/tags).
-
-## How to contribute
-
-We welcome contribution from the community. If you want to contribute to this project, please review the [code of conduct](CODE_OF_CONDUCT.md) and [contribution guidelines](CONTRIBUTING.md).
-
-### Update methodology
-
-How to update this package following a new release of GOV.UK Frontend:
-
-1. On `govuk-frontend`, compare the last compatible tag and the latest tag, e.g. <https://github.com/alphagov/govuk-frontend/compare/v4.3.1...v4.4.0>
-2. If there are any changes to templates in `package/govuk/components/<component>/template.njk` read the diff and apply the same changes to the Jinja equivalent templates in `govuk_frontend_jinja/templates/components/<component>/macro.html`
-3. Take into account any idiosyncrasies between how Nunjucks and Jinja would interpret that template. E.g. `None` checking nested attributes, checking array items lengths or logic operators such as `is`, `not` and `in`.
-4. Run the tests [as described above](#running-the-tests)
-5. Resolve any failing tests by comparing the expected HTML output with the actual HTML reported by the test tool
-6. Add a new row to the [compatibility table](#compatibility) above to show which version of GOV.UK Frontend the next release of this package will be targeting.
-7. Once all tests are passing follow the [contribution guidelines](CONTRIBUTING.md) to raise a pull request.
-8. After the pull request has been merged, [create a new release](https://github.com/LandRegistry/govuk-frontend-jinja/releases/new) and tag following SemVer conventions.
-9. [GitHub Actions](https://github.com/LandRegistry/govuk-frontend-jinja/actions/workflows/python-publish.yml) will run on the new tag to build the package and publish it to PyPI. Verify that the package has been updated with the latest release tag by checking [the project page](https://pypi.org/project/govuk-frontend-jinja/)
+For development setup, testing, and guidance on contributing changes, see the [contribution guide](CONTRIBUTING.md). Please also review the [code of conduct](CODE_OF_CONDUCT.md).
 
 ## Contributors
 
