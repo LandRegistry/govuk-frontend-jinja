@@ -29,7 +29,7 @@ These versions receive active support alongside upstream GOV.UK Frontend release
 
 | GOV.UK Frontend Jinja                                                              | GOV.UK Frontend                                                           |
 |------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| [4.2.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/4.2.0)   | [6.5.1](https://github.com/alphagov/govuk-frontend/releases/tag/v6.5.1)   |
+| [4.3.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/4.3.0)   | [6.5.1](https://github.com/alphagov/govuk-frontend/releases/tag/v6.5.1)   |
 | [4.1.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/4.1.0)   | [6.3.0](https://github.com/alphagov/govuk-frontend/releases/tag/v6.3.0)   |
 | [4.0.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/4.0.0)   | [6.0.0](https://github.com/alphagov/govuk-frontend/releases/tag/v6.0.0)   |
 | [3.10.0](https://github.com/LandRegistry/govuk-frontend-jinja/releases/tag/3.10.0) | [5.14.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.14.0) |
