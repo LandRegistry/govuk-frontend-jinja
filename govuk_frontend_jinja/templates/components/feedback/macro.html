@@ -1,4 +1,5 @@
-{% from "../../macros/attributes.njk" import govukAttributes -%}
+{% macro govukFeedback(params) %}
+{% from "govuk_frontend_jinja/macros/attributes.html" import govukAttributes -%}
 
 {% set headingLevel = params.headingLevel if params.headingLevel else 2 -%}
 
@@ -22,3 +23,4 @@
     </div>
   </div>
 </div>
+{% endmacro %}
