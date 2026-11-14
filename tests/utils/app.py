@@ -54,9 +54,7 @@ def component(component: str) -> str:
         """
         {{% from "govuk_frontend_jinja/components/" ~ component ~ "/macro.html" import govuk{macro_name} %}}
         {{{{ govuk{macro_name}(params) }}}}
-    """.format(
-            macro_name=data["macro_name"]
-        ),
+    """.format(macro_name=data["macro_name"]),
         component=component,
         params=data["params"],
     )
